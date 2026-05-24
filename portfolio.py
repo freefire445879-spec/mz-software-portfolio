@@ -14,180 +14,272 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Main Background */
+/* Main Background & Base Styling */
 .stApp {
-    background: linear-gradient(135deg, #050816, #0a0f1f, #111827);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #030712, #0b1528, #111827);
+    color: #f3f4f6;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 /* Remove Streamlit Default Header/Footer */
 #MainMenu, footer, header {
     visibility: hidden;
+    display: none;
 }
 
-/* Global Text */
+/* Global Typography Tweaks */
 html, body, [class*="css"] {
-    color: white;
+    color: #f3f4f6;
 }
 
 /* Main Container */
 .main-container {
-    padding: 2rem 5%;
+    padding: 2rem 6%;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 90px 20px 60px;
+    padding: 100px 20px 60px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
     color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #ffffff, #93c5fd, #00cfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #00cfff;
     margin-top: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 /* Section Titles */
 .section-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: #ff5c5c;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 30px;
     text-align: center;
+    position: relative;
 }
 
 /* About Section */
 .about-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 35px;
-    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 24px;
     line-height: 1.8;
-    font-size: 1.08rem;
-    box-shadow: 0 0 25px rgba(0, 207, 255, 0.08);
-    margin-bottom: 50px;
+    font-size: 1.15rem;
+    box-shadow: 0 10px 40px rgba(0, 207, 255, 0.04);
+    margin-bottom: 60px;
+    color: #cbd5e1;
+}
+
+.about-box strong {
+    color: #ffffff;
 }
 
 /* Service Cards */
 .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 35px 25px;
     text-align: center;
-    transition: 0.3s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     height: 100%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    border-color: #00cfff;
-    box-shadow: 0 0 25px rgba(0, 207, 255, 0.25);
+    transform: translateY(-10px);
+    border-color: rgba(0, 207, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 207, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 .card-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .card-desc {
-    color: #cbd5e1;
-    font-size: 1rem;
+    color: #94a3b8;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
-/* Points Toggle Button Styles */
+/* Custom Interactive Dropdown Styles */
+details {
+    margin-top: 20px;
+    text-align: left;
+}
+
 details summary {
     cursor: pointer;
     color: #ff5c5c;
-    font-weight: bold;
-    margin-top: 15px;
+    font-weight: 600;
+    font-size: 0.95rem;
     outline: none;
-    padding: 8px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 8px;
-    transition: 0.2s;
+    padding: 10px 14px;
+    background: rgba(255, 92, 92, 0.08);
+    border: 1px solid rgba(255, 92, 92, 0.15);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    list-style: none;
+    text-align: center;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
 }
 
 details summary:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 92, 92, 0.18);
+    border-color: rgba(255, 92, 92, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 92, 92, 0.1);
+}
+
+details[open] summary {
+    background: rgba(255, 92, 92, 0.2);
+    margin-bottom: 15px;
 }
 
 details ul {
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: #cbd5e1;
-    padding-left: 20px;
-    margin-top: 15px;
-    line-height: 1.6;
+    padding-left: 15px;
+    margin-top: 10px;
+    line-height: 1.7;
+    list-style-type: none;
+}
+
+details ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+details ul li::before {
+    content: "•";
+    color: #00cfff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: -5px;
+    top: -2px;
 }
 
 /* Contact Section */
 .contact-box {
     text-align: center;
-    padding: 50px 20px;
-    margin-top: 70px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 0 25px rgba(255, 92, 92, 0.1);
+    padding: 60px 30px;
+    margin-top: 80px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 92, 92, 0.03);
 }
 
 .contact-title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: 800;
     color: #ff5c5c;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
 }
 
 .phone {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #ffffff;
-    margin: 15px 0 25px;
-    font-weight: 600;
+    margin: 15px 0 20px;
+    font-weight: 700;
 }
 
-/* Call Button */
+.phone a {
+    transition: color 0.3s ease;
+}
+
+.phone a:hover {
+    color: #ff5c5c !important;
+}
+
+.location-link {
+    font-size: 1.3rem; 
+    margin-bottom: 35px; 
+    font-weight: 600; 
+    color: #cbd5e1;
+}
+
+.location-link a {
+    transition: color 0.3s ease;
+}
+
+.location-link a:hover {
+    color: #00cfff !important;
+}
+
+/* Call/Action Button */
 .call-btn {
     display: inline-block;
-    padding: 14px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #ff512f, #dd2476);
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white !important;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
     border-radius: 50px;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 24px rgba(221, 36, 118, 0.25);
 }
 
 .call-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 81, 47, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(221, 36, 118, 0.45);
 }
 
-/* Responsive */
+/* Responsive Design Overrides */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
-
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+    .main-container {
+        padding: 1rem 3%;
+    }
+    .card {
+        margin-bottom: 20px;
     }
 }
 
@@ -312,7 +404,7 @@ st.markdown("""
         </a>
     </div>
 
-    <div style="font-size: 1.3rem; margin-bottom: 25px; font-weight: 600; color: #cbd5e1;">
+    <div class="location-link">
         <a href="https://www.google.com/maps/search/?api=1&query=Pull+Nehar+Daska" target="_blank" style="color: #cbd5e1; text-decoration: none;">
             📍 Pull Nehar, Daska
         </a>
