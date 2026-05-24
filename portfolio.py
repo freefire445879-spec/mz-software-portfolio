@@ -67,14 +67,9 @@ html {
     scroll-margin-top: 100px;
 }
 
-/* Global Typography Tweaks */
-html, body, [class*="css"] {
-    color: #f3f4f6;
-}
-
 /* Main Container */
 .main-container {
-    padding: 4rem 6% 2rem; /* Added top padding for navbar */
+    padding: 4rem 6% 2rem;
 }
 
 /* Startup Welcome Animation */
@@ -135,32 +130,97 @@ html, body, [class*="css"] {
     letter-spacing: 2px;
 }
 
-/* About Section */
+/* Professional About Section */
 .about-box {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 40px;
+    padding: 50px;
     border-radius: 24px;
-    line-height: 1.8;
-    font-size: 1.15rem;
     box-shadow: 0 10px 40px rgba(0, 207, 255, 0.04);
     margin-bottom: 60px;
-    color: #cbd5e1;
+}
+
+.about-header {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.about-box strong {
+.about-text {
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+.about-text strong {
+    color: #00cfff;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: #ff5c5c;
+    margin: 0;
+    font-weight: 800;
+}
+
+.stat-item p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+}
+
+/* New Section: Tech Stack */
+.tech-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.tech-badge {
+    background: rgba(0, 207, 255, 0.1);
+    border: 1px solid rgba(0, 207, 255, 0.3);
     color: #ffffff;
-    font-size: 1.25rem;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: #00cfff;
+    color: #030712;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 207, 255, 0.3);
 }
 
 /* Service Cards */
 .card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 24px;
     padding: 35px 25px;
@@ -182,7 +242,6 @@ html, body, [class*="css"] {
 .card-icon {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 .card-title {
@@ -199,7 +258,41 @@ html, body, [class*="css"] {
     flex-grow: 1;
 }
 
-/* Pricing Section (New) */
+/* Interactive Dropdown Styles */
+details { margin-top: 20px; text-align: left; }
+details summary {
+    cursor: pointer; color: #ff5c5c; font-weight: 600; font-size: 0.95rem;
+    padding: 10px 14px; background: rgba(255, 92, 92, 0.08); border: 1px solid rgba(255, 92, 92, 0.15);
+    border-radius: 12px; transition: all 0.3s ease; text-align: center; list-style: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary:hover { background: rgba(255, 92, 92, 0.18); border-color: rgba(255, 92, 92, 0.3); }
+details ul { color: #cbd5e1; padding-left: 15px; margin-top: 10px; line-height: 1.7; list-style-type: none; }
+details ul li { position: relative; margin-bottom: 10px; padding-left: 15px; }
+details ul li::before { content: "•"; color: #00cfff; font-weight: bold; position: absolute; left: -5px; }
+
+/* Why Choose Us Section */
+.why-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 207, 255, 0.2);
+    border-radius: 24px;
+    padding: 50px 40px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.why-box h3 { color: #ffffff; text-align: center; margin-bottom: 15px; font-size: 2rem; }
+.why-box > p { color: #cbd5e1; text-align: center; font-size: 1.15rem; margin-bottom: 45px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.feature-grid { display: flex; gap: 25px; justify-content: space-between; flex-wrap: wrap; }
+.feat-item {
+    flex: 1; min-width: 280px; background: rgba(0, 0, 0, 0.25); padding: 30px; border-radius: 16px;
+    border-top: 4px solid #ff5c5c; transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.feat-item:hover { transform: translateY(-8px); border-top-color: #00cfff; background: rgba(0, 0, 0, 0.4); }
+.feat-item h4 { color: #ffffff; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+.feat-item p { color: #94a3b8; font-size: 1.05rem; line-height: 1.6; }
+
+/* Pricing Section */
 .pricing-container {
     display: flex;
     justify-content: center;
@@ -247,65 +340,22 @@ html, body, [class*="css"] {
     transform: rotate(45deg);
 }
 
-.pricing-title {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.pricing-price {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #00cfff;
-    margin: 20px 0;
-}
-
-.pricing-card.premium .pricing-price {
-    color: #ff5c5c;
-}
-
-.pricing-duration {
-    font-size: 1rem;
-    color: #94a3b8;
-    font-weight: normal;
-}
-
-/* Dropdown Elements */
-details { margin-top: 20px; text-align: left; }
-details summary {
-    cursor: pointer; color: #ff5c5c; font-weight: 600; font-size: 0.95rem;
-    padding: 10px 14px; background: rgba(255, 92, 92, 0.08); border: 1px solid rgba(255, 92, 92, 0.15);
-    border-radius: 12px; transition: all 0.3s ease; list-style: none; text-align: center;
-}
-details summary::-webkit-details-marker { display: none; }
-details summary:hover { background: rgba(255, 92, 92, 0.18); border-color: rgba(255, 92, 92, 0.3); }
-details ul { color: #cbd5e1; padding-left: 15px; margin-top: 10px; line-height: 1.7; list-style-type: none; }
-details ul li { position: relative; margin-bottom: 10px; padding-left: 15px; }
-details ul li::before { content: "•"; color: #00cfff; font-weight: bold; position: absolute; left: -5px; }
+.pricing-title { font-size: 1.5rem; color: #ffffff; font-weight: 700; }
+.pricing-price { font-size: 3rem; font-weight: 800; color: #00cfff; margin: 20px 0; }
+.pricing-card.premium .pricing-price { color: #ff5c5c; }
+.pricing-duration { font-size: 1rem; color: #94a3b8; font-weight: normal; }
 
 /* Contact Section */
 .contact-box {
-    text-align: center;
-    padding: 60px 30px;
-    margin-top: 80px;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(15px);
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 92, 92, 0.03);
+    text-align: center; padding: 60px 30px; margin-top: 80px;
+    background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 92, 92, 0.03);
 }
 
 .call-btn {
-    display: inline-block;
-    padding: 16px 40px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: white !important;
-    background: linear-gradient(135deg, #ff512f, #dd2476);
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s;
-    box-shadow: 0 8px 24px rgba(221, 36, 118, 0.25);
+    display: inline-block; padding: 16px 40px; font-size: 1.05rem; font-weight: 700; color: white !important;
+    background: linear-gradient(135deg, #ff512f, #dd2476); border-radius: 50px; text-decoration: none;
+    transition: all 0.3s; box-shadow: 0 8px 24px rgba(221, 36, 118, 0.25);
 }
 
 .call-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(221, 36, 118, 0.45); }
@@ -314,6 +364,7 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
 @media (max-width: 768px) {
     .navbar { gap: 15px; font-size: 0.9rem; padding: 10px 0; }
     .hero h1 { font-size: 2.8rem; }
+    .pricing-card { width: 100%; }
 }
 
 </style>
@@ -321,6 +372,7 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
 <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#tech">Tech Stack</a>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
@@ -346,20 +398,48 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---------------- ABOUT SECTION ---------------- #
-st.markdown('<div id="about" class="section-title section-anchor">About</div>', unsafe_allow_html=True)
+# ---------------- ABOUT SECTION (UPGRADED) ---------------- #
+st.markdown('<div id="about" class="section-title section-anchor">About The Developer</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="about-box">
-<strong>Muhammad Zubair</strong> from <strong>Daska</strong> specializes in building
-robust and professional software solutions for modern businesses.
-<br><br>
-From advanced Point of Sale systems to tailor-made business applications,
-the focus is always on performance, reliability, and user-friendly design.
-High-quality digital tools are crafted to help businesses operate smarter,
-faster, and more efficiently.
+    <div class="about-header">Transforming Ideas into Digital Reality</div>
+    <div class="about-text">
+        <strong>Muhammad Zubair</strong> from <strong>Daska</strong> is a dedicated Software Developer specializing in building robust, scalable, and high-performance business solutions. 
+        <br><br>
+        With a strong focus on modern UI/UX and seamless backend functionality, I bridge the gap between complex business logic and intuitive software. Whether it's a high-speed Retail POS, a secure Pharmacy system, or a complete custom data application, my mission is to empower your business with digital tools that drive growth, accuracy, and efficiency.
+    </div>
+    <div class="stats-row">
+        <div class="stat-item">
+            <h4>100%</h4>
+            <p>Client Satisfaction</p>
+        </div>
+        <div class="stat-item">
+            <h4>Custom</h4>
+            <p>Logic & Workflows</p>
+        </div>
+        <div class="stat-item">
+            <h4>24/7</h4>
+            <p>Priority Support</p>
+        </div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
+
+# ---------------- NEW SECTION: TECH STACK ---------------- #
+st.markdown('<div id="tech" class="section-title section-anchor">Technologies & Expertise</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="tech-container">
+    <div class="tech-badge">🐍 Python</div>
+    <div class="tech-badge">📊 Streamlit</div>
+    <div class="tech-badge">🗄️ SQL Databases</div>
+    <div class="tech-badge">💻 Custom UI/UX</div>
+    <div class="tech-badge">🐙 GitHub Integration</div>
+    <div class="tech-badge">⚙️ API Development</div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ---------------- SERVICES SECTION ---------------- #
 st.markdown('<div id="services" class="section-title section-anchor">Services</div>', unsafe_allow_html=True)
@@ -432,7 +512,32 @@ business workflow and requirements.
 </div>
 """, unsafe_allow_html=True)
 
-# ---------------- SALES PLAN / PRICING SECTION ---------------- #
+# ---------------- WHY CHOOSE US SECTION ---------------- #
+st.markdown('<div class="section-title">Why You Need Our Software</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="why-box">
+<h3>Take Complete Control of Your Business Performance</h3>
+<p>Don't just track sales—maximize your profitability. Our premium systems provide the deep insights needed to scale your operations safely and efficiently.</p>
+<div class="feature-grid">
+<div class="feat-item">
+<h4>📈 Advanced Profit Dashboard</h4>
+<p>Stop guessing. See your exact daily, weekly, and monthly profit margins in real-time. Identify your highest-earning products instantly so you know where to invest.</p>
+</div>
+<div class="feat-item">
+<h4>💰 Advanced Collection Reports</h4>
+<p>Never lose track of outstanding balances. Get detailed, automated reports on credit, pending payments, and cash flow history to keep your finances secure.</p>
+</div>
+<div class="feat-item">
+<h4>🛠️ 100% Custom Software Choice</h4>
+<p>Get a system built entirely around <i>your</i> rules. Don't force your business to fit a generic template; we tailor the logic and workflows specifically to you.</p>
+</div>
+</div>
+</div>
+""", unsafe_allow_html=True)
+
+
+# ---------------- SALES PLAN / PRICING SECTION (FIXED) ---------------- #
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
 st.markdown("""
@@ -464,7 +569,6 @@ st.markdown("""
 
 </div>
 """, unsafe_allow_html=True)
-
 
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
