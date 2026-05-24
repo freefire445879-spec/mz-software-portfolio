@@ -305,10 +305,21 @@ with col3:
 st.markdown("""
 <div class="contact-box">
     <div class="contact-title">Get In Touch</div>
-    <div class="phone">📞 03476712269</div>
+    
+    <div class="phone">
+        <a href="https://wa.me/923476712269" target="_blank" style="color: white; text-decoration: none;">
+            📞 03476712269
+        </a>
+    </div>
 
-    <a class="call-btn" href="tel:03476712269">
-        Call Now
+    <div style="font-size: 1.3rem; margin-bottom: 25px; font-weight: 600; color: #cbd5e1;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Pull+Nehar+Daska" target="_blank" style="color: #cbd5e1; text-decoration: none;">
+            📍 Pull Nehar, Daska
+        </a>
+    </div>
+
+    <a class="call-btn" href="https://wa.me/923476712269" target="_blank">
+        Chat on WhatsApp
     </a>
 </div>
 """, unsafe_allow_html=True)
