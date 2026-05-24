@@ -376,13 +376,17 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
     position: absolute;
     top: 15px;
     right: -35px;
-    background: #ff5c5c;
     color: white;
     padding: 5px 40px;
     font-size: 0.8rem;
     font-weight: bold;
     transform: rotate(45deg);
 }
+
+/* Badge Color Modifiers */
+.badge.orange { background: #ff9800; }
+.badge.green { background: #2ecc71; }
+.badge.red { background: #ff5c5c; }
 
 .pricing-title { font-size: 1.5rem; color: #ffffff; font-weight: 700; }
 .pricing-price { font-size: 3rem; font-weight: 800; color: #00cfff; margin: 20px 0; }
@@ -580,6 +584,7 @@ st.markdown("""
 </div>
 </div>
 """, unsafe_allow_html=True)
+
 # ---------------- CUSTOMER LEDGER (KHATA) SECTION ---------------- #
 st.markdown('<div id="ledger" class="section-title section-anchor">Customer Ledger (Khata) System</div>', unsafe_allow_html=True)
 
@@ -603,6 +608,7 @@ st.markdown("""
 </div>
 </div>
 """, unsafe_allow_html=True)
+
 # ---------------- SOFTWARE DEVELOPMENT PROCESS (NEW SECTION) ---------------- #
 st.markdown('<div id="process" class="section-title section-anchor">Our Development Process</div>', unsafe_allow_html=True)
 
@@ -650,7 +656,7 @@ st.markdown("""
 </div>
 
 <div class="pricing-card">
-<div class="badge">GOOD VALUE</div>
+<div class="badge orange">GOOD VALUE</div>
 <div class="pricing-title">Yearly License</div>
 <div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
 <p style="color: #cbd5e1; margin-bottom: 20px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
@@ -662,7 +668,7 @@ st.markdown("""
 </div>
 
 <div class="pricing-card">
-<div class="badge">BETTER VALUE</div>
+<div class="badge green">BETTER VALUE</div>
 <div class="pricing-title">2-Year License</div>
 <div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
 <p style="color: #cbd5e1; margin-bottom: 20px;">Save more with a multi-year plan for uninterrupted business operations.</p>
@@ -674,7 +680,7 @@ st.markdown("""
 </div>
 
 <div class="pricing-card premium">
-<div class="badge">BEST VALUE</div>
+<div class="badge red">BEST VALUE</div>
 <div class="pricing-title">Lifetime Access</div>
 <div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
 <p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
