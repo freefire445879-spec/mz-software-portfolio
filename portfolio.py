@@ -661,6 +661,7 @@ st.markdown("""
 </div>
 
 <div class="pricing-card">
+<div class="badge">BEST VALUE</div>
 <div class="pricing-title">2-Year License</div>
 <div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
 <p style="color: #cbd5e1; margin-bottom: 20px;">Save more with a multi-year plan for uninterrupted business operations.</p>
