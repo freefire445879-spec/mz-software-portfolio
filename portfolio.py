@@ -831,7 +831,7 @@ st.markdown("""
 
     /* Submit Button styling */
     div.stButton > button {
-        background: linear-gradient(135deg, #ff512f, #dd2476) !important;
+        
         color: white !important;
         border: none !important;
         border-radius: 50px !important;
