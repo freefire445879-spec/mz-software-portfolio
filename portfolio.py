@@ -876,22 +876,34 @@ st.markdown("""
         font-weight: 600 !important;
     }
 
-    /* Input boxes aur Textarea ki styling */
+    /* Input boxes aur Textarea ki styling (background aur color) */
     div[data-baseweb="input"] > div, div[data-baseweb="textarea"] > textarea {
         background-color: #1e293b !important;
-        color: white !important;
         border: 1px solid #374151 !important;
         border-radius: 10px !important;
         transition: all 0.3s ease !important;
     }
 
-    /* Focus effect */
-    div[data-baseweb="input"] > div:focus-within, div[data-baseweb="textarea"] > textarea:focus {
-        box-shadow: 0 0 10px #00cfff !important;
-        border-color: #00cfff !important;
+    /* Typed text ka color bright white karna */
+    input, textarea {
+        color: #ffffff !important;
+        font-weight: 500 !important;
     }
 
-    /* --- FIX: Submit Button styling (Dono buttons ke liye) --- */
+    /* Placeholder text ka color halka rakhna taake focus ho */
+    ::placeholder {
+        color: #94a3b8 !important;
+    }
+
+    /* Focus effect: Box bara hoga aur shadow aayegi */
+    div[data-baseweb="input"] > div:focus-within, div[data-baseweb="textarea"] > textarea:focus {
+        transform: scale(1.015); /* Size bara karne ke liye */
+        box-shadow: 0 0 15px #00cfff !important;
+        border-color: #00cfff !important;
+        outline: none !important;
+    }
+
+    /* Submit Button styling */
     div.stButton > button, div[data-testid="stFormSubmitButton"] > button {
         background: linear-gradient(135deg, #ff512f, #dd2476) !important;
         color: white !important;
