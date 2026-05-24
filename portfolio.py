@@ -795,66 +795,74 @@ st.markdown("""
 # ---------------- FAQs SECTION ---------------- #
 import streamlit as st
 
-# --- MODERN FAQ CSS ---
+# --- MODERN CSS FOR FAQ ---
 st.markdown("""
 <style>
-    /* Styling for the Expanders */
-    .stExpander {
-        background-color: #0f172a !important;
-        border: 1px solid #334155 !important;
-        border-radius: 12px !important;
-        margin-bottom: 10px !important;
-        transition: all 0.3s ease !important;
+    /* Styling the container */
+    .faq-container {
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid #334155;
     }
     
-    /* Hover effect for expanders */
-    .stExpander:hover {
-        border-color: #00cfff !important;
-        box-shadow: 0 4px 12px rgba(0, 207, 255, 0.2) !important;
+    /* Answer box styling */
+    .answer-box {
+        background: #1e293b;
+        padding: 20px;
+        border-left: 5px solid #00cfff;
+        border-radius: 10px;
+        color: #e2e8f0;
+        margin-top: 15px;
+        font-size: 16px;
+        line-height: 1.6;
     }
-
-    /* Style the text inside expanders */
-    .stExpander p {
-        color: #e2e8f0 !important;
-        font-size: 16px !important;
+    
+    /* Style the radio buttons */
+    div[role="radiogroup"] > label {
+        font-size: 18px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# --- FAQ DATA (Bilingual) ---
-faq_list = [
-    {
-        "q": "Can I test the software first? / Kya main software ko pehle test kar sakta hoon?",
-        "a": "Yes! We provide a Free Demo/Trial version so you can test all features before purchasing. / Ji bilkul! Hum Free Demo version dete hain taake aap purchase karne se pehle sab features test kar sakein."
+# --- FAQ DATA (Extended & Professional) ---
+faq_data = {
+    "1. Can I test the software before buying?": {
+        "ans": "Yes, absolutely! We understand that trust is built through experience. We provide a full-featured Free Demo/Trial version that allows you to explore all the modules, including the Point of Sale (POS) and Khata Ledger management. You can test it with your real-world scenarios to ensure it meets your business requirements before making any financial commitment. / Ji bilkul! Hum Free Demo version dete hain taake aap purchase karne se pehle poora software test kar sakein. Aap POS aur Khata Ledger ke tamam features khud chala kar dekh sakte hain taake aapko tasalli ho jaye."
     },
-    {
-        "q": "Is this a lifetime license? / Kya ye Lifetime Access hai?",
-        "a": "Yes, our Lifetime plan includes permanent access with no monthly fees. / Ji, hamara Lifetime plan hamesha ke liye hai, koi monthly charges nahi hain."
+    "2. Is this a lifetime license or subscription?": {
+        "ans": "This is a Lifetime Access license. Unlike other software providers who charge recurring monthly or annual fees, our model is one-time payment based. Once you purchase the software, you own it forever. There are no hidden charges, no subscription renewals, and no 'per-user' extra costs. / Ye Lifetime Access hai. Hum koi monthly ya yearly fees nahi lete. Aap ek baar pay karte hain aur software aapka ho jata hai. Isme koi hidden charges ya monthly subscription ka chakkar nahi hai."
     },
-    {
-        "q": "What happens if I format my PC? / PC format hone par data ka kya hoga?",
-        "a": "We provide a secure backup system, and you can easily restore your data from the cloud anytime. / Hum aapko secure backup system dete hain, jisse aap kahin se bhi apna data restore kar sakte hain."
+    "3. What happens to my data if my PC crashes or formats?": {
+        "ans": "We have designed the system with data security as the top priority. The software creates automated local backups on your hard drive. Additionally, we provide guidance on how to sync your database with cloud storage (like Google Drive or OneDrive). Even if your PC crashes or is formatted, your business records can be restored in minutes using your backup file. / Hamara system automatic local backup banata hai. Hum aapko ye bhi sikhayenge ke data ko Cloud (Google Drive) par kaise sync karna hai. Agar PC kharab ya format bhi ho jaye, to aapka data sirf chand minute mein restore ho jayega."
     },
-    {
-        "q": "Is technical support included? / Kya technical support milegi?",
-        "a": "Absolutely! We provide 24/7 priority support via WhatsApp and Email for all our clients. / Ji bilkul! Hum apne har client ko 24/7 WhatsApp aur Email par support dete hain."
+    "4. Is technical support available after purchase?": {
+        "ans": "Your purchase includes 24/7 priority support. We believe in building long-term relationships, not just selling products. Whether you face a technical glitch, need help with installation, or have questions about using the software, our team is available via WhatsApp, Phone, and Email to assist you immediately. / Hum apne har client ko 24/7 priority support dete hain. Aapko kabhi bhi koi masla aaye, ya installation mein madad chahiye ho, hum WhatsApp aur Email par hamesha aapke sath hain."
     },
-    {
-        "q": "Can I update the software for free? / Kya updates free milengi?",
-        "a": "Yes, all future updates and new features are completely free for our lifetime members. / Ji, jitni bhi nayi updates aur features aayenge, wo lifetime members ke liye free hain."
+    "5. Can I get free updates and new features?": {
+        "ans": "Yes! All our clients receive free lifetime updates. As we continue to develop new features, modules, or improve security based on user feedback, you will receive these updates at no extra cost. We believe in constantly improving our software to help your business grow. / Ji, jitni bhi nayi updates aur features software mein aayenge, wo aapko bilkul free milenge. Hum apne software ko hamesha behtar banate rehte hain taake aapka business modernize ho sake."
     },
-    {
-        "q": "Is my data secure? / Kya mera data safe hai?",
-        "a": "Your data is encrypted and stored locally, ensuring 100% privacy and security. / Aapka data fully encrypted hai aur local store hota hai, isliye aapka data 100% private aur safe hai."
+    "6. How secure is my business data?": {
+        "ans": "Security is our core promise. All your business transactions, customer credit history, and ledger data are stored locally on your machine. This means your data never leaves your control and is not uploaded to any third-party server without your permission. It is 100% private and protected. / Aapka data 100% secure aur private hai. Sab kuch aapke computer mein local save hota hai, kisi third-party server par nahi. Isliye aapka data aapke control mein hai aur kisi aur ki access nahi hai."
     }
-]
+}
 
 # --- DISPLAYING FAQ SECTION ---
 st.markdown("### ❓ Frequently Asked Questions")
 
-for item in faq_list:
-    with st.expander(item["q"]):
-        st.write(item["a"])
+# Using Radio for Accordion behavior
+selected_question = st.radio("Choose a question to read the answer:", list(faq_data.keys()))
+
+# Displaying the selected answer inside a styled box
+if selected_question:
+    answer = faq_data[selected_question]["ans"]
+    st.markdown(f"""
+    <div class="answer-box">
+        {answer}
+    </div>
+    """, unsafe_allow_html=True)
 import streamlit as st
 import requests
 
