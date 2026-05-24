@@ -793,15 +793,68 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------- FAQs SECTION ---------------- #
-st.markdown('<div id="faq" class="section-title section-anchor">Frequently Asked Questions</div>', unsafe_allow_html=True)
+import streamlit as st
 
+# --- MODERN FAQ CSS ---
 st.markdown("""
-<div class="why-box">
-<details><summary>Kya main software ko pehle test kar sakta hoon?</summary><p style="padding:10px;">Ji bilkul! Aap hamara Free Trial version le sakte hain taake aap khud tasalli kar sakein.</p></details>
-<details><summary>Kya software lifetime ke liye hai?</summary><p style="padding:10px;">Jo Lifetime Access plan hai, wo hamesha ke liye hai. Koi hidden charges ya monthly fees nahi hain.</p></details>
-<details><summary>Agar PC format ho jaye toh data ka kya hoga?</summary><p style="padding:10px;">Hum aapko data backup lene ka tareeqa sikhayenge aur cloud par backup rakhne ki facility bhi hai.</p></details>
-</div>
+<style>
+    /* Styling for the Expanders */
+    .stExpander {
+        background-color: #0f172a !important;
+        border: 1px solid #334155 !important;
+        border-radius: 12px !important;
+        margin-bottom: 10px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Hover effect for expanders */
+    .stExpander:hover {
+        border-color: #00cfff !important;
+        box-shadow: 0 4px 12px rgba(0, 207, 255, 0.2) !important;
+    }
+
+    /* Style the text inside expanders */
+    .stExpander p {
+        color: #e2e8f0 !important;
+        font-size: 16px !important;
+    }
+</style>
 """, unsafe_allow_html=True)
+
+# --- FAQ DATA (Bilingual) ---
+faq_list = [
+    {
+        "q": "Can I test the software first? / Kya main software ko pehle test kar sakta hoon?",
+        "a": "Yes! We provide a Free Demo/Trial version so you can test all features before purchasing. / Ji bilkul! Hum Free Demo version dete hain taake aap purchase karne se pehle sab features test kar sakein."
+    },
+    {
+        "q": "Is this a lifetime license? / Kya ye Lifetime Access hai?",
+        "a": "Yes, our Lifetime plan includes permanent access with no monthly fees. / Ji, hamara Lifetime plan hamesha ke liye hai, koi monthly charges nahi hain."
+    },
+    {
+        "q": "What happens if I format my PC? / PC format hone par data ka kya hoga?",
+        "a": "We provide a secure backup system, and you can easily restore your data from the cloud anytime. / Hum aapko secure backup system dete hain, jisse aap kahin se bhi apna data restore kar sakte hain."
+    },
+    {
+        "q": "Is technical support included? / Kya technical support milegi?",
+        "a": "Absolutely! We provide 24/7 priority support via WhatsApp and Email for all our clients. / Ji bilkul! Hum apne har client ko 24/7 WhatsApp aur Email par support dete hain."
+    },
+    {
+        "q": "Can I update the software for free? / Kya updates free milengi?",
+        "a": "Yes, all future updates and new features are completely free for our lifetime members. / Ji, jitni bhi nayi updates aur features aayenge, wo lifetime members ke liye free hain."
+    },
+    {
+        "q": "Is my data secure? / Kya mera data safe hai?",
+        "a": "Your data is encrypted and stored locally, ensuring 100% privacy and security. / Aapka data fully encrypted hai aur local store hota hai, isliye aapka data 100% private aur safe hai."
+    }
+]
+
+# --- DISPLAYING FAQ SECTION ---
+st.markdown("### ❓ Frequently Asked Questions")
+
+for item in faq_list:
+    with st.expander(item["q"]):
+        st.write(item["a"])
 import streamlit as st
 import requests
 
