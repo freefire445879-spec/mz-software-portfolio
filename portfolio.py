@@ -795,74 +795,75 @@ st.markdown("""
 # ---------------- FAQs SECTION ---------------- #
 import streamlit as st
 
-# --- MODERN CSS FOR FAQ ---
+# --- MODERN CSS FOR FAQ ACCORDION ---
 st.markdown("""
 <style>
-    /* Styling the container */
-    .faq-container {
-        background: #0f172a;
-        padding: 20px;
-        border-radius: 15px;
-        border: 1px solid #334155;
+    /* FAQ Button Styling - Makes it look like a Question Header */
+    div.stButton > button {
+        width: 100%;
+        background-color: #1e293b !important;
+        color: white !important;
+        border: 1px solid #334155 !important;
+        padding: 20px !important;
+        text-align: left !important;
+        font-size: 18px !important;
+        font-weight: bold !important;
+        border-radius: 10px !important;
+        margin-bottom: 5px !important;
+        transition: all 0.3s ease !important;
     }
     
+    div.stButton > button:hover {
+        background-color: #334155 !important;
+        border-color: #00cfff !important;
+    }
+
     /* Answer box styling */
     .answer-box {
-        background: #1e293b;
+        background: #0f172a;
         padding: 20px;
         border-left: 5px solid #00cfff;
-        border-radius: 10px;
+        border-right: 1px solid #334155;
+        border-bottom: 1px solid #334155;
+        border-radius: 0 0 10px 10px;
         color: #e2e8f0;
-        margin-top: 15px;
+        margin-bottom: 15px;
         font-size: 16px;
         line-height: 1.6;
-    }
-    
-    /* Style the radio buttons */
-    div[role="radiogroup"] > label {
-        font-size: 18px !important;
-        font-weight: 600 !important;
-        color: #ffffff !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# --- FAQ DATA (Extended & Professional) ---
+# --- FAQ DATA ---
 faq_data = {
-    "1. Can I test the software before buying?": {
-        "ans": "Yes, absolutely! We understand that trust is built through experience. We provide a full-featured Free Demo/Trial version that allows you to explore all the modules, including the Point of Sale (POS) and Khata Ledger management. You can test it with your real-world scenarios to ensure it meets your business requirements before making any financial commitment. / Ji bilkul! Hum Free Demo version dete hain taake aap purchase karne se pehle poora software test kar sakein. Aap POS aur Khata Ledger ke tamam features khud chala kar dekh sakte hain taake aapko tasalli ho jaye."
-    },
-    "2. Is this a lifetime license or subscription?": {
-        "ans": "This is a Lifetime Access license. Unlike other software providers who charge recurring monthly or annual fees, our model is one-time payment based. Once you purchase the software, you own it forever. There are no hidden charges, no subscription renewals, and no 'per-user' extra costs. / Ye Lifetime Access hai. Hum koi monthly ya yearly fees nahi lete. Aap ek baar pay karte hain aur software aapka ho jata hai. Isme koi hidden charges ya monthly subscription ka chakkar nahi hai."
-    },
-    "3. What happens to my data if my PC crashes or formats?": {
-        "ans": "We have designed the system with data security as the top priority. The software creates automated local backups on your hard drive. Additionally, we provide guidance on how to sync your database with cloud storage (like Google Drive or OneDrive). Even if your PC crashes or is formatted, your business records can be restored in minutes using your backup file. / Hamara system automatic local backup banata hai. Hum aapko ye bhi sikhayenge ke data ko Cloud (Google Drive) par kaise sync karna hai. Agar PC kharab ya format bhi ho jaye, to aapka data sirf chand minute mein restore ho jayega."
-    },
-    "4. Is technical support available after purchase?": {
-        "ans": "Your purchase includes 24/7 priority support. We believe in building long-term relationships, not just selling products. Whether you face a technical glitch, need help with installation, or have questions about using the software, our team is available via WhatsApp, Phone, and Email to assist you immediately. / Hum apne har client ko 24/7 priority support dete hain. Aapko kabhi bhi koi masla aaye, ya installation mein madad chahiye ho, hum WhatsApp aur Email par hamesha aapke sath hain."
-    },
-    "5. Can I get free updates and new features?": {
-        "ans": "Yes! All our clients receive free lifetime updates. As we continue to develop new features, modules, or improve security based on user feedback, you will receive these updates at no extra cost. We believe in constantly improving our software to help your business grow. / Ji, jitni bhi nayi updates aur features software mein aayenge, wo aapko bilkul free milenge. Hum apne software ko hamesha behtar banate rehte hain taake aapka business modernize ho sake."
-    },
-    "6. How secure is my business data?": {
-        "ans": "Security is our core promise. All your business transactions, customer credit history, and ledger data are stored locally on your machine. This means your data never leaves your control and is not uploaded to any third-party server without your permission. It is 100% private and protected. / Aapka data 100% secure aur private hai. Sab kuch aapke computer mein local save hota hai, kisi third-party server par nahi. Isliye aapka data aapke control mein hai aur kisi aur ki access nahi hai."
-    }
+    "1. Can I test the software before buying?": "Yes, absolutely! We understand that trust is built through experience. We provide a full-featured Free Demo/Trial version that allows you to explore all the modules, including the Point of Sale (POS) and Khata Ledger management. You can test it with your real-world scenarios to ensure it meets your business requirements before making any financial commitment. / Ji bilkul! Hum Free Demo version dete hain taake aap purchase karne se pehle poora software test kar sakein. Aap POS aur Khata Ledger ke tamam features khud chala kar dekh sakte hain taake aapko tasalli ho jaye.",
+    "2. Is this a lifetime license or subscription?": "This is a Lifetime Access license. Unlike other software providers who charge recurring monthly or annual fees, our model is one-time payment based. Once you purchase the software, you own it forever. There are no hidden charges, no subscription renewals, and no 'per-user' extra costs. / Ye Lifetime Access hai. Hum koi monthly ya yearly fees nahi lete. Aap ek baar pay karte hain aur software aapka ho jata hai. Isme koi hidden charges ya monthly subscription ka chakkar nahi hai.",
+    "3. What happens to my data if my PC crashes or formats?": "We have designed the system with data security as the top priority. The software creates automated local backups on your hard drive. Additionally, we provide guidance on how to sync your database with cloud storage (like Google Drive or OneDrive). Even if your PC crashes or is formatted, your business records can be restored in minutes using your backup file. / Hamara system automatic local backup banata hai. Hum aapko ye bhi sikhayenge ke data ko Cloud (Google Drive) par kaise sync karna hai. Agar PC kharab ya format bhi ho jaye, to aapka data sirf chand minute mein restore ho jayega.",
+    "4. Is technical support available after purchase?": "Your purchase includes 24/7 priority support. We believe in building long-term relationships, not just selling products. Whether you face a technical glitch, need help with installation, or have questions about using the software, our team is available via WhatsApp, Phone, and Email to assist you immediately. / Hum apne har client ko 24/7 priority support dete hain. Aapko kabhi bhi koi masla aaye, ya installation mein madad chahiye ho, hum WhatsApp aur Email par hamesha aapke sath hain.",
+    "5. Can I get free updates and new features?": "Yes! All our clients receive free lifetime updates. As we continue to develop new features, modules, or improve security based on user feedback, you will receive these updates at no extra cost. We believe in constantly improving our software to help your business grow. / Ji, jitni bhi nayi updates aur features software mein aayenge, wo aapko bilkul free milenge. Hum apne software ko hamesha behtar banate rehte hain taake aapka business modernize ho sake.",
+    "6. How secure is my business data?": "Security is our core promise. All your business transactions, customer credit history, and ledger data are stored locally on your machine. This means your data never leaves your control and is not uploaded to any third-party server without your permission. It is 100% private and protected. / Aapka data 100% secure aur private hai. Sab kuch aapke computer mein local save hota hai, kisi third-party server par nahi. Isliye aapka data aapke control mein hai aur kisi aur ki access nahi hai."
 }
 
-# --- DISPLAYING FAQ SECTION ---
+# --- LOGIC FOR ACCORDION ---
 st.markdown("### ❓ Frequently Asked Questions")
 
-# Using Radio for Accordion behavior
-selected_question = st.radio("Choose a question to read the answer:", list(faq_data.keys()))
+# Initialize session state to track which question is open
+if 'active_faq' not in st.session_state:
+    st.session_state.active_faq = None
 
-# Displaying the selected answer inside a styled box
-if selected_question:
-    answer = faq_data[selected_question]["ans"]
-    st.markdown(f"""
-    <div class="answer-box">
-        {answer}
-    </div>
-    """, unsafe_allow_html=True)
+# Loop to create buttons
+for i, (question, answer) in enumerate(faq_data.items()):
+    # Button as a Question Header
+    if st.button(question, key=f"faq_{i}"):
+        # Toggle: If clicked again, close it; otherwise, open it
+        if st.session_state.active_faq == i:
+            st.session_state.active_faq = None
+        else:
+            st.session_state.active_faq = i
+
+    # Show Answer if this is the active one
+    if st.session_state.active_faq == i:
+        st.markdown(f'<div class="answer-box">{answer}</div>', unsafe_allow_html=True)
 import streamlit as st
 import requests
 
