@@ -37,10 +37,29 @@ html, body, [class*="css"] {
     padding: 2rem 6%;
 }
 
+/* Startup Welcome Animation */
+.welcome-overlay {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #00cfff;
+    letter-spacing: 1px;
+    animation: welcomeFade 4.5s ease-in-out forwards;
+    overflow: hidden;
+    text-shadow: 0 0 20px rgba(0, 207, 255, 0.5);
+}
+
+@keyframes welcomeFade {
+    0% { opacity: 0; transform: translateY(-20px); max-height: 100px; padding-top: 30px; padding-bottom: 20px;}
+    15% { opacity: 1; transform: translateY(0); max-height: 100px; padding-top: 30px; padding-bottom: 20px;}
+    80% { opacity: 1; transform: translateY(0); max-height: 100px; padding-top: 30px; padding-bottom: 20px;}
+    100% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; transform: translateY(-20px); }
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 100px 20px 60px;
+    padding: 60px 20px 60px;
 }
 
 .hero h1 {
@@ -197,6 +216,71 @@ details ul li::before {
     top: -2px;
 }
 
+/* Why Choose Us Section */
+.why-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 207, 255, 0.2);
+    border-radius: 24px;
+    padding: 50px 40px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.why-box h3 { 
+    color: #ffffff; 
+    text-align: center; 
+    margin-bottom: 15px; 
+    font-size: 2rem;
+}
+
+.why-box > p { 
+    color: #cbd5e1; 
+    text-align: center; 
+    font-size: 1.15rem; 
+    margin-bottom: 45px; 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-grid { 
+    display: flex; 
+    gap: 25px; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+.feat-item {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    border-radius: 16px;
+    border-top: 4px solid #ff5c5c;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feat-item:hover { 
+    transform: translateY(-8px); 
+    border-top-color: #00cfff; 
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.feat-item h4 { 
+    color: #ffffff; 
+    margin-bottom: 15px; 
+    font-size: 1.3rem; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feat-item p { 
+    color: #94a3b8; 
+    font-size: 1.05rem; 
+    line-height: 1.6; 
+}
+
 /* Contact Section */
 .contact-box {
     text-align: center;
@@ -281,6 +365,12 @@ details ul li::before {
     .card {
         margin-bottom: 20px;
     }
+    .feature-grid {
+        flex-direction: column;
+    }
+    .welcome-overlay {
+        font-size: 1.5rem;
+    }
 }
 
 </style>
@@ -288,6 +378,13 @@ details ul li::before {
 
 # ---------------- MAIN CONTAINER ---------------- #
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
+
+# ---------------- WELCOME ANIMATION ---------------- #
+st.markdown("""
+<div class="welcome-overlay">
+✨ Welcome to Muhammad Zubair Officials ✨
+</div>
+""", unsafe_allow_html=True)
 
 # ---------------- HEADER ---------------- #
 st.markdown("""
@@ -392,6 +489,31 @@ business workflow and requirements.
 </div>
 </div>
 """, unsafe_allow_html=True)
+
+# ---------------- WHY CHOOSE US SECTION ---------------- #
+st.markdown('<div class="section-title">Why You Need Our Software</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="why-box">
+<h3>Take Complete Control of Your Business Performance</h3>
+<p>Don't just track sales—maximize your profitability. Our premium systems provide the deep insights needed to scale your operations safely and efficiently.</p>
+<div class="feature-grid">
+<div class="feat-item">
+<h4>📈 Advanced Profit Dashboard</h4>
+<p>Stop guessing. See your exact daily, weekly, and monthly profit margins in real-time. Identify your highest-earning products instantly so you know where to invest.</p>
+</div>
+<div class="feat-item">
+<h4>💰 Advanced Collection Reports</h4>
+<p>Never lose track of outstanding balances. Get detailed, automated reports on credit, pending payments, and cash flow history to keep your finances secure.</p>
+</div>
+<div class="feat-item">
+<h4>🛠️ 100% Custom Software Choice</h4>
+<p>Get a system built entirely around <i>your</i> rules. Don't force your business to fit a generic template; we tailor the logic and workflows specifically to you.</p>
+</div>
+</div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown("""
