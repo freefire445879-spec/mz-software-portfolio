@@ -805,20 +805,61 @@ st.markdown("""
 import streamlit as st
 import requests
 
-# Formspree URL
+# --- CUSTOM CSS FOR FORM STYLING ---
+st.markdown("""
+<style>
+    /* Labels ko white karna taake nazar ayen */
+    label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+
+    /* Input boxes aur Textarea ki styling */
+    div[data-baseweb="input"] > div, div[data-baseweb="textarea"] > textarea {
+        background-color: #1e293b !important;
+        color: white !important;
+        border: 1px solid #374151 !important;
+        border-radius: 10px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Jab click karein to Shadow/Glow effect (Focus) */
+    div[data-baseweb="input"] > div:focus-within, div[data-baseweb="textarea"] > textarea:focus {
+        box-shadow: 0 0 10px #00cfff !important;
+        border-color: #00cfff !important;
+    }
+
+    /* Submit Button styling */
+    div.stButton > button {
+        background: linear-gradient(135deg, #ff512f, #dd2476) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 10px 30px !important;
+        font-weight: bold !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    div.stButton > button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(221, 36, 118, 0.4);
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# --- FORM SECTION ---
 FORMSPREE_URL = "https://formspree.io/f/xaqkdqep"
 
 st.markdown("### 📝 Leave a Review")
 
 with st.form("review_form", clear_on_submit=True):
-    # Name aur Email fields
     col1, col2 = st.columns(2)
     with col1:
         name = st.text_input("Your Name")
     with col2:
-        email = st.text_input("Email Address") # Browser ise "Email" label ki wajah se suggest karega
+        email = st.text_input("Email Address")
     
-    # Rating stars (Radio button use kiya hai taake click karna asaan ho)
+    # Rating stars styling
     rating = st.radio(
         "Rate Our Service", 
         ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"], 
@@ -831,7 +872,6 @@ with st.form("review_form", clear_on_submit=True):
 
     if submit:
         if name and email and comment:
-            # Formspree ko data bhejna
             data = {
                 "Name": name,
                 "Email": email,
@@ -839,12 +879,14 @@ with st.form("review_form", clear_on_submit=True):
                 "Comment": comment
             }
             
-            response = requests.post(FORMSPREE_URL, data=data)
-            
-            if response.status_code == 200:
-                st.success("Thank you! Your feedback has been sent.")
-            else:
-                st.error("Error! Try again later.")
+            try:
+                response = requests.post(FORMSPREE_URL, data=data)
+                if response.status_code == 200:
+                    st.success("Thank you! Your feedback has been sent.")
+                else:
+                    st.error("Something went wrong. Please try again.")
+            except Exception as e:
+                st.error("Error connecting to server.")
         else:
             st.warning("Please fill all the fields (Name, Email, and Comment).")
 # ---------------- CONTACT SECTION ---------------- #
