@@ -802,6 +802,31 @@ st.markdown("""
 <details><summary>Agar PC format ho jaye toh data ka kya hoga?</summary><p style="padding:10px;">Hum aapko data backup lene ka tareeqa sikhayenge aur cloud par backup rakhne ki facility bhi hai.</p></details>
 </div>
 """, unsafe_allow_html=True)
+# ----------------COMMENT SECTION ---------------- #
+import streamlit as st
+import requests
+
+# Formspree URL (apna wala yahan paste karein)
+FORMSPREE_URL = "https://formspree.io/f/xaqkdqep" # Yahan apna code dalen
+
+st.markdown("### 📝 Leave a Review")
+
+with st.form("review_form", clear_on_submit=True):
+    name = st.text_input("Name")
+    comment = st.text_area("Your Comment")
+    submit = st.form_submit_button("Submit")
+
+    if submit:
+        if name and comment:
+            # Data bhejna
+            response = requests.post(FORMSPREE_URL, data={"Name": name, "Comment": comment})
+            
+            if response.status_code == 200:
+                st.success("Thank you! Review sent.")
+            else:
+                st.error("Error! Try again later.")
+        else:
+            st.warning("Please fill all fields.")
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
 
