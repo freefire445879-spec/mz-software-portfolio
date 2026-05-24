@@ -808,7 +808,7 @@ import requests
 # --- CUSTOM CSS FOR FORM STYLING ---
 st.markdown("""
 <style>
-    /* Labels ko white karna taake nazar ayen */
+    /* Labels ko white karna */
     label {
         color: #ffffff !important;
         font-weight: 600 !important;
@@ -823,15 +823,15 @@ st.markdown("""
         transition: all 0.3s ease !important;
     }
 
-    /* Jab click karein to Shadow/Glow effect (Focus) */
+    /* Focus effect */
     div[data-baseweb="input"] > div:focus-within, div[data-baseweb="textarea"] > textarea:focus {
         box-shadow: 0 0 10px #00cfff !important;
         border-color: #00cfff !important;
     }
 
-    /* Submit Button styling */
-    div.stButton > button {
-        
+    /* --- FIX: Submit Button styling (Dono buttons ke liye) --- */
+    div.stButton > button, div[data-testid="stFormSubmitButton"] > button {
+        background: linear-gradient(135deg, #ff512f, #dd2476) !important;
         color: white !important;
         border: none !important;
         border-radius: 50px !important;
@@ -840,7 +840,7 @@ st.markdown("""
         transition: transform 0.3s ease !important;
     }
     
-    div.stButton > button:hover {
+    div.stButton > button:hover, div[data-testid="stFormSubmitButton"] > button:hover {
         transform: scale(1.05);
         box-shadow: 0 5px 15px rgba(221, 36, 118, 0.4);
     }
@@ -859,7 +859,6 @@ with st.form("review_form", clear_on_submit=True):
     with col2:
         email = st.text_input("Email Address")
     
-    # Rating stars styling
     rating = st.radio(
         "Rate Our Service", 
         ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"], 
