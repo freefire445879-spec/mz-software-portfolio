@@ -879,7 +879,7 @@ st.markdown("""
     /* Input boxes aur Textarea ki styling */
     div[data-baseweb="input"] > div, div[data-baseweb="textarea"] > textarea {
         background-color: #1e293b !important;
-        color: white !important;
+        color: red !important;
         border: 1px solid #374151 !important;
         border-radius: 10px !important;
         transition: all 0.3s ease !important;
