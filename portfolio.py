@@ -585,26 +585,24 @@ st.markdown('<div id="ledger" class="section-title section-anchor">Customer Ledg
 
 st.markdown("""
 <div class="why-box">
-    <h3 style="color: #00cfff;">Advanced Digital Khata & Points Management</h3>
-    <p>Replace manual notebooks with a secure digital ledger built directly into the POS. Track credit, reward loyal customers, and view sale histories instantly.</p>
-    
-    <div class="feature-grid">
-        <div class="feat-item">
-            <h4>📖 Custom Ledger Summary</h4>
-            <p>Instantly view complete records of credit (udhaar), total cash received, and remaining balances for specific customers on a unified dashboard.</p>
-        </div>
-        <div class="feat-item">
-            <h4>🎁 Points Reward System</h4>
-            <p>Automatically save and calculate loyalty points on every customer purchase to encourage repeat business and easily apply future discounts.</p>
-        </div>
-        <div class="feat-item">
-            <h4>📜 Complete Sale History</h4>
-            <p>Track exactly what each customer bought, the date of purchase, and the payment method used. Never lose a transaction record again.</p>
-        </div>
-    </div>
+<h3 style="color: #00cfff;">Advanced Digital Khata & Points Management</h3>
+<p>Replace manual notebooks with a secure digital ledger built directly into the POS. Track credit, reward loyal customers, and view sale histories instantly.</p>
+<div class="feature-grid">
+<div class="feat-item">
+<h4>📖 Custom Ledger Summary</h4>
+<p>Instantly view complete records of credit (udhaar), total cash received, and remaining balances for specific customers on a unified dashboard.</p>
+</div>
+<div class="feat-item">
+<h4>🎁 Points Reward System</h4>
+<p>Automatically save and calculate loyalty points on every customer purchase to encourage repeat business and easily apply future discounts.</p>
+</div>
+<div class="feat-item">
+<h4>📜 Complete Sale History</h4>
+<p>Track exactly what each customer bought, the date of purchase, and the payment method used. Never lose a transaction record again.</p>
+</div>
+</div>
 </div>
 """, unsafe_allow_html=True)
-
 # ---------------- SOFTWARE DEVELOPMENT PROCESS (NEW SECTION) ---------------- #
 st.markdown('<div id="process" class="section-title section-anchor">Our Development Process</div>', unsafe_allow_html=True)
 
