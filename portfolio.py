@@ -418,7 +418,7 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
     <a href="#about">About</a>
     <a href="#tech">Tech Stack</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
+    <a href="#ledger">Khata Ledger</a>  <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -578,6 +578,30 @@ st.markdown("""
 <p>Get a system built entirely around <i>your</i> rules. Don't force your business to fit a generic template; we tailor the logic and workflows specifically to you.</p>
 </div>
 </div>
+</div>
+""", unsafe_allow_html=True)
+# ---------------- CUSTOMER LEDGER (KHATA) SECTION ---------------- #
+st.markdown('<div id="ledger" class="section-title section-anchor">Customer Ledger (Khata) System</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="why-box">
+    <h3 style="color: #00cfff;">Advanced Digital Khata & Points Management</h3>
+    <p>Replace manual notebooks with a secure digital ledger built directly into the POS. Track credit, reward loyal customers, and view sale histories instantly.</p>
+    
+    <div class="feature-grid">
+        <div class="feat-item">
+            <h4>📖 Custom Ledger Summary</h4>
+            <p>Instantly view complete records of credit (udhaar), total cash received, and remaining balances for specific customers on a unified dashboard.</p>
+        </div>
+        <div class="feat-item">
+            <h4>🎁 Points Reward System</h4>
+            <p>Automatically save and calculate loyalty points on every customer purchase to encourage repeat business and easily apply future discounts.</p>
+        </div>
+        <div class="feat-item">
+            <h4>📜 Complete Sale History</h4>
+            <p>Track exactly what each customer bought, the date of purchase, and the payment method used. Never lose a transaction record again.</p>
+        </div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
