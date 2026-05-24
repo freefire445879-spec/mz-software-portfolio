@@ -792,6 +792,16 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# ---------------- FAQs SECTION ---------------- #
+st.markdown('<div id="faq" class="section-title section-anchor">Frequently Asked Questions</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="why-box">
+<details><summary>Kya main software ko pehle test kar sakta hoon?</summary><p style="padding:10px;">Ji bilkul! Aap hamara Free Trial version le sakte hain taake aap khud tasalli kar sakein.</p></details>
+<details><summary>Kya software lifetime ke liye hai?</summary><p style="padding:10px;">Jo Lifetime Access plan hai, wo hamesha ke liye hai. Koi hidden charges ya monthly fees nahi hain.</p></details>
+<details><summary>Agar PC format ho jaye toh data ka kya hoga?</summary><p style="padding:10px;">Hum aapko data backup lene ka tareeqa sikhayenge aur cloud par backup rakhne ki facility bhi hai.</p></details>
+</div>
+""", unsafe_allow_html=True)
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
 
