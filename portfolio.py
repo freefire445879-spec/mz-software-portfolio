@@ -77,39 +77,24 @@ html, body, [class*="css"] {
     margin-bottom: 50px;
 }
 
-/* Service Cards */
-.card {
+/* Service Tabs Styling */
+div[data-baseweb="tab-list"] {
+    justify-content: center;
+    gap: 20px;
+}
+
+div[data-baseweb="tab"] {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 30px 25px;
-    text-align: center;
-    transition: 0.3s ease-in-out;
-    height: 100%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 10px 20px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #00cfff;
-    box-shadow: 0 0 25px rgba(0, 207, 255, 0.25);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.card-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.card-desc {
-    color: #cbd5e1;
-    font-size: 1rem;
+/* Feature List Style */
+.feature-list {
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid #00cfff;
 }
 
 /* Contact Section */
@@ -159,7 +144,6 @@ html, body, [class*="css"] {
     .hero h1 {
         font-size: 2.5rem;
     }
-
     .hero p {
         font-size: 1rem;
     }
@@ -197,43 +181,33 @@ st.markdown("""
 # ---------------- SERVICES SECTION ---------------- #
 st.markdown('<div class="section-title">Services</div>', unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns(3)
+# Implementing Tabs to switch between services
+tab1, tab2, tab3 = st.tabs(["🛒 Retail POS", "💊 Pharmacy POS", "⚙️ Custom Solutions"])
 
-with col1:
+with tab1:
     st.markdown("""
-    <div class="card">
-        <div class="card-icon">🛒</div>
-        <div class="card-title">Retail POS</div>
-        <div class="card-desc">
-            Modern Billing & Inventory management solutions designed
-            for retail businesses.
-        </div>
+    <div class="feature-list">
+        <ul>
+            <li>Automate complex discounts without manual cashier math.</li>
+            <li>Reward repeat buyers to keep them coming back.</li>
+            <li>Track exact inventory levels in real time effortlessly.</li>
+            <li>Get automatic alerts before popular items sell out.</li>
+            <li>Prevent employee theft and shoplifting with exact tracking.</li>
+            <li>Scan barcodes quickly to shorten busy checkout lines.</li>
+            <li>Eliminate costly human calculation mistakes at the register.</li>
+            <li>See exactly which products make the most money.</li>
+            <li>Schedule staff efficiently based on busiest store hours.</li>
+            <li>Email digital receipts to build customer marketing lists.</li>
+            <li>Securely back up all business data automatically.</li>
+        </ul>
     </div>
     """, unsafe_allow_html=True)
 
-with col2:
-    st.markdown("""
-    <div class="card">
-        <div class="card-icon">💊</div>
-        <div class="card-title">Pharmacy POS</div>
-        <div class="card-desc">
-            Smart Expiry & Stock management system built specifically
-            for pharmacies and medical stores.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+with tab2:
+    st.write("Pharmacy POS features coming soon...")
 
-with col3:
-    st.markdown("""
-    <div class="card">
-        <div class="card-icon">⚙️</div>
-        <div class="card-title">Custom Solutions</div>
-        <div class="card-desc">
-            Tailor-made applications developed according to your
-            business workflow and requirements.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+with tab3:
+    st.write("Custom Solutions features coming soon...")
 
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown("""
