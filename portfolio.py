@@ -440,10 +440,92 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------- HEADER ---------------- #
+# ---------------- CUSTOM CSS FOR HERO SECTION ---------------- #
 st.markdown("""
-<div class="hero">
-<h1>MZ Professional Tools</h1>
-<p>High-Quality POS & Custom Software Solutions</p>
+<style>
+/* Professional Hero Section */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 5% 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+.hero-text {
+    text-align: left;
+    flex: 1;
+}
+.hero-text h1 {
+    font-size: 4.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    background: linear-gradient(to right, #ffffff, #93c5fd, #00cfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text p {
+    font-size: 1.5rem;
+    color: #00cfff;
+    margin-top: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(0, 207, 255, 0.4);
+    box-shadow: 0 0 35px rgba(0, 207, 255, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 207, 255, 0.5);
+    border-color: #00cfff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding-top: 60px;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+# ---------------- HEADER ---------------- #
+st.markdown("""
+<div class="hero-container">
+    <div class="hero-text">
+        <h1>MZ Professional Tools</h1>
+        <p>High-Quality POS & Custom Software Solutions</p>
+    </div>
+    <div class="hero-image-wrapper">
+        <img src="https://github.com/freefire445879-spec/mz-software-portfolio/blob/main/1767490334321.jpg" alt="Muhammad Zubair" class="hero-image">
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
