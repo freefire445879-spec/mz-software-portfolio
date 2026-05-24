@@ -802,31 +802,51 @@ st.markdown("""
 <details><summary>Agar PC format ho jaye toh data ka kya hoga?</summary><p style="padding:10px;">Hum aapko data backup lene ka tareeqa sikhayenge aur cloud par backup rakhne ki facility bhi hai.</p></details>
 </div>
 """, unsafe_allow_html=True)
-# ----------------COMMENT SECTION ---------------- #
 import streamlit as st
 import requests
 
-# Formspree URL (apna wala yahan paste karein)
-FORMSPREE_URL = "https://formspree.io/f/xaqkdqep" # Yahan apna code dalen
+# Formspree URL
+FORMSPREE_URL = "https://formspree.io/f/xaqkdqep"
 
 st.markdown("### 📝 Leave a Review")
 
 with st.form("review_form", clear_on_submit=True):
-    name = st.text_input("Name")
+    # Name aur Email fields
+    col1, col2 = st.columns(2)
+    with col1:
+        name = st.text_input("Your Name")
+    with col2:
+        email = st.text_input("Email Address") # Browser ise "Email" label ki wajah se suggest karega
+    
+    # Rating stars (Radio button use kiya hai taake click karna asaan ho)
+    rating = st.radio(
+        "Rate Our Service", 
+        ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"], 
+        horizontal=True
+    )
+    
     comment = st.text_area("Your Comment")
-    submit = st.form_submit_button("Submit")
+    
+    submit = st.form_submit_button("Submit Review")
 
     if submit:
-        if name and comment:
-            # Data bhejna
-            response = requests.post(FORMSPREE_URL, data={"Name": name, "Comment": comment})
+        if name and email and comment:
+            # Formspree ko data bhejna
+            data = {
+                "Name": name,
+                "Email": email,
+                "Rating": rating,
+                "Comment": comment
+            }
+            
+            response = requests.post(FORMSPREE_URL, data=data)
             
             if response.status_code == 200:
-                st.success("Thank you! Review sent.")
+                st.success("Thank you! Your feedback has been sent.")
             else:
                 st.error("Error! Try again later.")
         else:
-            st.warning("Please fill all fields.")
+            st.warning("Please fill all the fields (Name, Email, and Comment).")
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
 
