@@ -484,14 +484,12 @@ st.markdown("""
     height: 320px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(0, 207, 255, 0.4);
-    box-shadow: 0 0 35px rgba(0, 207, 255, 0.25);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: none; /* Border khatam kar diya */
+    box-shadow: none; /* Shadow khatam kar di */
+    transition: transform 0.4s ease;
 }
 .hero-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 50px rgba(0, 207, 255, 0.5);
-    border-color: #00cfff;
 }
 
 /* Mobile Responsiveness */
@@ -524,7 +522,7 @@ st.markdown("""
         <p>High-Quality POS & Custom Software Solutions</p>
     </div>
     <div class="hero-image-wrapper">
-        <img src="https://github.com/freefire445879-spec/mz-software-portfolio/blob/main/1767490334321.jpg" alt="Muhammad Zubair" class="hero-image">
+        <img src="https://raw.githubusercontent.com/freefire445879-spec/mz-software-portfolio/main/1767490334321.jpg" alt="Muhammad Zubair" class="hero-image">
     </div>
 </div>
 """, unsafe_allow_html=True)
