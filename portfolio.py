@@ -292,6 +292,50 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
 .feat-item h4 { color: #ffffff; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
 .feat-item p { color: #94a3b8; font-size: 1.05rem; line-height: 1.6; }
 
+/* Development Process Section (NEW) */
+.process-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.process-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(0, 207, 255, 0.4);
+    border-radius: 16px;
+    padding: 25px;
+    width: 260px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    background: rgba(0, 207, 255, 0.05);
+    border-style: solid;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 207, 255, 0.1);
+}
+
+.process-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.process-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.process-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Pricing Section */
 .pricing-container {
     display: flex;
@@ -374,6 +418,7 @@ details ul li::before { content: "•"; color: #00cfff; font-weight: bold; posit
     <a href="#about">About</a>
     <a href="#tech">Tech Stack</a>
     <a href="#services">Services</a>
+    <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
 </nav>
@@ -536,36 +581,64 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# ---------------- SOFTWARE DEVELOPMENT PROCESS (NEW SECTION) ---------------- #
+st.markdown('<div id="process" class="section-title section-anchor">Our Development Process</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="process-container">
+<div class="process-step">
+<div class="process-icon">📝</div>
+<div class="process-title">1. Requirement Analysis</div>
+<div class="process-desc">Understanding your core business needs and defining the essential software logic.</div>
+</div>
+<div class="process-step">
+<div class="process-icon">🎨</div>
+<div class="process-title">2. UI/UX Design</div>
+<div class="process-desc">Crafting a modern, easy-to-use interface tailored specifically to your daily workflow.</div>
+</div>
+<div class="process-step">
+<div class="process-icon">💻</div>
+<div class="process-title">3. Custom Development</div>
+<div class="process-desc">Writing secure, clean, and robust code using the latest modern technologies.</div>
+</div>
+<div class="process-step">
+<div class="process-icon">🚀</div>
+<div class="process-title">4. Deployment & Support</div>
+<div class="process-desc">Successfully launching your system with ongoing 24/7 priority technical support.</div>
+</div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ---------------- SALES PLAN / PRICING SECTION (FIXED) ---------------- #
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="pricing-container">
-    
-    <div class="pricing-card">
-        <div class="pricing-title">Yearly License</div>
-        <div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
-        <p style="color: #cbd5e1; margin-bottom: 20px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
-        <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-            <li>✔️ Full POS Functionality</li>
-            <li>✔️ Standard Updates</li>
-            <li>✔️ Email Support</li>
-        </ul>
-    </div>
 
-    <div class="pricing-card premium">
-        <div class="badge">BEST VALUE</div>
-        <div class="pricing-title">Lifetime Access</div>
-        <div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
-        <p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
-        <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-            <li>✔️ Lifetime POS Access</li>
-            <li>✔️ Priority WhatsApp Support</li>
-            <li>✔️ Free Future Updates</li>
-            <li>✔️ No Monthly/Yearly Fees</li>
-        </ul>
-    </div>
+<div class="pricing-card">
+<div class="pricing-title">Yearly License</div>
+<div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
+<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
+<li>✔️ Full POS Functionality</li>
+<li>✔️ Standard Updates</li>
+<li>✔️ Email Support</li>
+</ul>
+</div>
+
+<div class="pricing-card premium">
+<div class="badge">BEST VALUE</div>
+<div class="pricing-title">Lifetime Access</div>
+<div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
+<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
+<li>✔️ Lifetime POS Access</li>
+<li>✔️ Priority WhatsApp Support</li>
+<li>✔️ Free Future Updates</li>
+<li>✔️ No Monthly/Yearly Fees</li>
+</ul>
+</div>
 
 </div>
 """, unsafe_allow_html=True)
