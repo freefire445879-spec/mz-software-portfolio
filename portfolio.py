@@ -110,7 +110,32 @@ html, body, [class*="css"] {
 .card-desc {
     color: #cbd5e1;
     font-size: 1rem;
-    margin-bottom: 15px;
+}
+
+/* Points Toggle Button Styles */
+details summary {
+    cursor: pointer;
+    color: #ff5c5c;
+    font-weight: bold;
+    margin-top: 15px;
+    outline: none;
+    padding: 8px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+details summary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+details ul {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    padding-left: 20px;
+    margin-top: 15px;
+    line-height: 1.6;
 }
 
 /* Contact Section */
@@ -198,11 +223,6 @@ st.markdown("""
 # ---------------- SERVICES SECTION ---------------- #
 st.markdown('<div class="section-title">Services</div>', unsafe_allow_html=True)
 
-# Initialize Session State
-if 'show_retail' not in st.session_state: st.session_state.show_retail = False
-if 'show_pharmacy' not in st.session_state: st.session_state.show_pharmacy = False
-if 'show_custom' not in st.session_state: st.session_state.show_custom = False
-
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -210,72 +230,76 @@ with col1:
     <div class="card">
         <div class="card-icon">🛒</div>
         <div class="card-title">Retail POS</div>
-        <div class="card-desc">Modern Billing & Inventory management solutions.</div>
+        <div class="card-desc">
+            Modern Billing & Inventory management solutions designed
+            for retail businesses.
+            <br>
+            <details>
+                <summary>View Features</summary>
+                <ul>
+                    <li>Automate complex discounts without manual cashier math.</li>
+                    <li>Reward repeat buyers to keep them coming back.</li>
+                    <li>Track exact inventory levels in real time effortlessly.</li>
+                    <li>Get automatic alerts before popular items sell out.</li>
+                    <li>Prevent employee theft with exact item tracking.</li>
+                    <li>Scan barcodes quickly to shorten busy checkout lines.</li>
+                    <li>Eliminate calculation mistakes at the cash register.</li>
+                    <li>See exactly which products make the most money.</li>
+                    <li>Schedule staff efficiently based on busiest store hours.</li>
+                    <li>Email digital receipts to build customer marketing lists.</li>
+                </ul>
+            </details>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    if st.button("Show Retail Features", key="btn1"):
-        st.session_state.show_retail = not st.session_state.show_retail
-    st.markdown("</div>", unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="card">
         <div class="card-icon">💊</div>
         <div class="card-title">Pharmacy POS</div>
-        <div class="card-desc">Smart Expiry & Stock management for pharmacies.</div>
+        <div class="card-desc">
+            Smart Expiry & Stock management system built specifically
+            for pharmacies and medical stores.
+            <br>
+            <details>
+                <summary>View Features</summary>
+                <ul>
+                    <li>Track medicine expiry dates automatically to reduce waste.</li>
+                    <li>Manage batch numbers easily for strict safety compliance.</li>
+                    <li>Alert staff instantly when critical medicines run low.</li>
+                    <li>Handle prescriptions securely with integrated patient profiles.</li>
+                    <li>Control restricted drugs using secure digital access logs.</li>
+                    <li>Look up drug substitutes instantly during customer checkouts.</li>
+                </ul>
+            </details>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    if st.button("Show Pharmacy Features", key="btn2"):
-        st.session_state.show_pharmacy = not st.session_state.show_pharmacy
-    st.markdown("</div>", unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
     <div class="card">
         <div class="card-icon">⚙️</div>
         <div class="card-title">Custom Solutions</div>
-        <div class="card-desc">Tailor-made applications for your business.</div>
+        <div class="card-desc">
+            Tailor-made applications developed according to your
+            business workflow and requirements.
+            <br>
+            <details>
+                <summary>View Features</summary>
+                <ul>
+                    <li>Build custom features tailored to your unique workflow.</li>
+                    <li>Scale your system easily as your business grows.</li>
+                    <li>Own software completely without paying monthly user licenses.</li>
+                    <li>Integrate seamlessly with your existing tools and apps.</li>
+                    <li>Gain a competitive edge over local business rivals.</li>
+                    <li>Modify the system anytime your business model changes.</li>
+                </ul>
+            </details>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    if st.button("Show Custom Features", key="btn3"):
-        st.session_state.show_custom = not st.session_state.show_custom
-    st.markdown("</div>", unsafe_allow_html=True)
-
-# Display content based on button clicks
-if st.session_state.show_retail:
-    st.subheader("Retail POS Features")
-    st.markdown("""
-    - Automate complex discounts without manual cashier math.
-    - Reward repeat buyers to keep them coming back.
-    - Track exact inventory levels in real time effortlessly.
-    - Get automatic alerts before popular items sell out.
-    - Prevent employee theft with exact item tracking.
-    - Scan barcodes quickly to shorten busy checkout lines.
-    - Eliminate calculation mistakes at the cash register.
-    - See exactly which products make the most money.
-    - Schedule staff efficiently based on busiest store hours.
-    - Email digital receipts to build customer marketing lists.
-    - Securely back up all business data automatically.
-    """)
-
-if st.session_state.show_pharmacy:
-    st.subheader("Pharmacy POS Features")
-    st.markdown("""
-    - Track medicine expiry dates automatically to reduce waste.
-    - Manage batch numbers easily for strict safety compliance.
-    - Alert staff instantly when critical medicines run low.
-    - Handle prescriptions securely with integrated patient profiles.
-    - Control restricted drugs using secure digital access logs.
-    - Look up drug substitutes instantly during customer checkouts.
-    """)
-
-if st.session_state.show_custom:
-    st.subheader("Custom Software Development")
-    st.markdown("""
-    - Build custom features tailored to your unique workflow.
-    - Scale your system easily as your business grows.
-    - Own software completely without paying monthly user licenses.
-    - Integrate seamlessly with your existing tools and apps.
-    - Gain a competitive edge over local business rivals.
-    - Modify the system anytime your business model changes.
-    """)
 
 # ---------------- CONTACT SECTION ---------------- #
 st.markdown("""
