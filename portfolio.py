@@ -632,11 +632,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ---------------- SALES PLAN / PRICING SECTION (FIXED) ---------------- #
+# ---------------- SALES PLAN / PRICING SECTION (UPDATED) ---------------- #
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="pricing-container">
+
+<div class="pricing-card">
+<div class="pricing-title">Free Trial</div>
+<div class="pricing-price">Rs 0</div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Test out the core features of our POS system before buying.</p>
+<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
+<li>⚠️ Limited Bills & Points</li>
+<li>❌ No Custom Logo</li>
+<li>❌ No Online Backup & Restore</li>
+</ul>
+</div>
 
 <div class="pricing-card">
 <div class="pricing-title">Yearly License</div>
@@ -649,6 +660,17 @@ st.markdown("""
 </ul>
 </div>
 
+<div class="pricing-card">
+<div class="pricing-title">2-Year License</div>
+<div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
+<p style="color: #cbd5e1; margin-bottom: 20px;">Save more with a multi-year plan for uninterrupted business operations.</p>
+<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
+<li>✔️ Full POS Functionality</li>
+<li>✔️ Discounted Pricing</li>
+<li>✔️ Priority Support</li>
+</ul>
+</div>
+
 <div class="pricing-card premium">
 <div class="badge">BEST VALUE</div>
 <div class="pricing-title">Lifetime Access</div>
@@ -656,9 +678,9 @@ st.markdown("""
 <p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
 <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
 <li>✔️ Lifetime POS Access</li>
+<li>✔️ Cloud Backup & Restore</li>
 <li>✔️ Priority WhatsApp Support</li>
 <li>✔️ Free Future Updates</li>
-<li>✔️ No Monthly/Yearly Fees</li>
 </ul>
 </div>
 
