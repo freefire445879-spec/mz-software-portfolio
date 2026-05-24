@@ -641,6 +641,23 @@ business workflow and requirements.
 </div>
 """, unsafe_allow_html=True)
 
+# ---------------- TRUST ---------------- #
+st.markdown('<div id="testimonials" class="section-title section-anchor">What Our Clients Say</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="why-box" style="border-top: 4px solid #00cfff;">
+<div style="display: flex; gap: 20px; overflow-x: auto; padding: 20px;">
+    <div class="feat-item" style="min-width: 300px;">
+        <p>"MZ Professional Tools ka POS system use kar raha hoon. Mera stock aur profit manage karna ab baccho ka khel hai. Highly recommended!"</p>
+        <h4 style="margin-top:15px;">— Malik General Store, Daska</h4>
+    </div>
+    <div class="feat-item" style="min-width: 300px;">
+        <p>"Pharmacy POS ne meri zindagi asaan kar di. Expiry date tracking aur medicine management behtareen hai."</p>
+        <h4 style="margin-top:15px;">— City Pharmacy</h4>
+    </div>
+</div>
+</div>
+""", unsafe_allow_html=True)
 # ---------------- WHY CHOOSE US SECTION ---------------- #
 st.markdown('<div class="section-title">Why You Need Our Software</div>', unsafe_allow_html=True)
 
