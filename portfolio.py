@@ -736,62 +736,270 @@ st.markdown("""
 
 
 # ---------------- SALES PLAN / PRICING SECTION (UPDATED) ---------------- #
+# ----------------================---------------------------------- #
+#                  👑 UPDATED PREMIUM PRICING SECTION                 #
+# ----------------================---------------------------------- #
+
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
+
+# CSS for interactive hover effect and premium buttons
+st.markdown("""
+<style>
+/* Base container styling */
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Card basic design and smooth transition */
+.pricing-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Premium Card specific extra borders */
+.pricing-card.premium {
+    border: 1px solid #ff5c5c;
+    background: linear-gradient(180deg, rgba(255,92,92,0.05), rgba(15,23,42,0.8));
+}
+
+/* 🔥 CURSOR HOVER EFFECT - SIZE BARHA HO JAYEGA */
+.pricing-card:hover {
+    transform: translateY(-12px) scale(1.05); /* Size increase smoothly */
+    border-color: #00cfff;
+    box-shadow: 0 20px 40px rgba(0, 207, 255, 0.15);
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.pricing-card.premium:hover {
+    border-color: #ff5c5c;
+    box-shadow: 0 20px 40px rgba(255, 92, 92, 0.2);
+}
+
+/* List Item styling for crisp look */
+.pricing-features-list {
+    text-align: left; 
+    color: #cbd5e1; 
+    list-style: none; 
+    padding: 0;
+    margin: 20px 0 30px 0;
+}
+
+.pricing-features-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Ultra premium call to action buttons */
+.plan-btn {
+    display: block;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #1e293b, #0f172a);
+    color: #00cfff !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 207, 255, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+.plan-btn:hover {
+    background: linear-gradient(90deg, #00cfff, #008ecc);
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(0, 207, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.premium-btn {
+    display: block;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #ff5c5c, #d93838);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+.premium-btn:hover {
+    background: linear-gradient(90deg, #ff7a7a, #ff5c5c);
+    box-shadow: 0 5px 15px rgba(255, 92, 92, 0.4);
+    transform: translateY(-2px);
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <div class="pricing-container">
 
-<div class="pricing-card">
-<div class="pricing-title">Free Trial</div>
-<div class="pricing-price">Rs 0</div>
-<p style="color: #cbd5e1; margin-bottom: 20px;">Test out the core features of our POS system before buying.</p>
-<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-<li>⚠️ Limited Bills & Points</li>
-<li>❌ No Custom Logo</li>
-<li>❌ No Online Backup & Restore</li>
-</ul>
-</div>
+    <div class="pricing-card">
+        <div>
+            <div class="pricing-title">Free Trial</div>
+            <div class="pricing-price">Rs 0</div>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Test out the core features of our POS system before buying.</p>
+            <ul class="pricing-features-list">
+                <li>⏱️ 7 Days Full Access</li>
+                <li>✔️ Basic Invoice Generation</li>
+                <li>✔️ Retail Billing System</li>
+                <li>⚠️ Limited Bills & Entries</li>
+                <li>❌ No Custom Receipt Logo</li>
+                <li>❌ No Live Cloud Database</li>
+            </ul>
+        </div>
+        <a class="plan-btn" href="https://wa.me/923476712269?text=Hi%20Zubair,%20mujhe%20POS%20Software%20ka%20Free%20Trial%20setup%20chahiye." target="_blank">Get Trial</a>
+    </div>
 
-<div class="pricing-card">
-<div class="badge orange">GOOD VALUE</div>
-<div class="pricing-title">Yearly License</div>
-<div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
-<p style="color: #cbd5e1; margin-bottom: 20px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
-<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-<li>✔️ Full POS Functionality</li>
-<li>✔️ Standard Updates</li>
-<li>✔️ Email Support</li>
-</ul>
-</div>
+    <div class="pricing-card">
+        <div>
+            <div class="badge orange">GOOD VALUE</div>
+            <div class="pricing-title">Yearly License</div>
+            <div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
+            <ul class="pricing-features-list">
+                <li>✔️ 100% Full POS Functionality</li>
+                <li>✔️ Custom Business Logo Receipts</li>
+                <li>✔️ Unlimited Invoices & Stock Entries</li>
+                <li>✔️ Customer Khata Ledger Setup</li>
+                <li>✔️ Standard Software Updates</li>
+                <li>✔️ Secure Local SQLite Database</li>
+            </ul>
+        </div>
+        <a class="plan-btn" href="https://wa.me/923476712269?text=Hi%20Zubair,%20main%20POS%20Software%20ka%20Yearly%20License%20(Rs%202000)%20buy%20krna%20chahta%20hoon." target="_blank">Buy Yearly</a>
+    </div>
 
-<div class="pricing-card">
-<div class="badge green">BETTER VALUE</div>
-<div class="pricing-title">2-Year License</div>
-<div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
-<p style="color: #cbd5e1; margin-bottom: 20px;">Save more with a multi-year plan for uninterrupted business operations.</p>
-<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-<li>✔️ Full POS Functionality</li>
-<li>✔️ Discounted Pricing</li>
-<li>✔️ Priority Support</li>
-</ul>
-</div>
+    <div class="pricing-card">
+        <div>
+            <div class="badge green">BETTER VALUE</div>
+            <div class="pricing-title">2-Year License</div>
+            <div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Save more with a multi-year plan for uninterrupted business operations.</p>
+            <ul class="pricing-features-list">
+                <li>✔️ Everything in Yearly License</li>
+                <li>🔥 Save Rs 500 Extra Discount</li>
+                <li>✔️ No Monthly/Hidden Charges</li>
+                <li>✔️ Advanced Sales & Profit Reports</li>
+                <li>✔️ Offline-First Zero Lag Syncing</li>
+                <li>✔️ Priority Remote Support (AnyDesk)</li>
+            </ul>
+        </div>
+        <a class="plan-btn" href="https://wa.me/923476712269?text=Hi%20Zubair,%20main%20POS%20Software%20ka%202-Year%20License%20(Rs%203500)%20buy%20krna%20chahta%20hoon." target="_blank">Buy 2-Years</a>
+    </div>
 
-<div class="pricing-card premium">
-<div class="badge red">BEST VALUE</div>
-<div class="pricing-title">Lifetime Access</div>
-<div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
-<p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
-<ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0;">
-<li>✔️ Lifetime POS Access</li>
-<li>✔️ Cloud Backup & Restore</li>
-<li>✔️ Priority WhatsApp Support</li>
-<li>✔️ Free Future Updates</li>
-</ul>
-</div>
+    <div class="pricing-card premium">
+        <div>
+            <div class="badge red">BEST VALUE</div>
+            <div class="pricing-title">Lifetime Access</div>
+            <div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
+            <ul class="pricing-features-list">
+                <li>💎 Lifetime Software Access Forever</li>
+                <li>☁️ Live Firebase Cloud Auto-Sync</li>
+                <li>🔄 Automatic Offline-First Database</li>
+                <li>✔️ Complete Advanced Inventory Alert</li>
+                <li>✔️ 100% Free Future Major Updates</li>
+                <li>🚀 24/7 Priority WhatsApp Support</li>
+            </ul>
+        </div>
+        <a class="premium-btn" href="https://wa.me/923476712269?text=Hi%20Zubair,%20main%20POS%20Software%20ka%20Lifetime%20Access%20Plan%20(Rs%2020000)%20buy%20krna%20chahta%20hoon." target="_blank">Buy Lifetime</a>
+    </div>
 
 </div>
 """, unsafe_allow_html=True)
 
+
+# ----------------================---------------------------------- #
+#                  📬 REDESIGNED CONTACT DUAL SECTION                 #
+# ----------------================---------------------------------- #
+
+st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+.contact-container-box {
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 650px;
+    margin: 40px auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.contact-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.dual-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.dual-btn.wa {
+    background: #25d366;
+    color: #ffffff !important;
+}
+.dual-btn.wa:hover {
+    background: #20ba5a;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    transform: translateY(-3px);
+}
+.dual-btn.mail {
+    background: #ea4335;
+    color: #ffffff !important;
+}
+.dual-btn.mail:hover {
+    background: #d3382c;
+    box-shadow: 0 8px 20px rgba(234, 67, 53, 0.4);
+    transform: translateY(-3px);
+}
+</style>
+
+<div class="contact-container-box">
+    <div style="font-size: 2.6rem; font-weight: 800; color: #ff5c5c; margin-bottom: 10px;">Get In Touch</div>
+    <p style="color: #94a3b8; font-size: 1.1rem; margin-bottom: 25px;">Choose your preferred method to contact us. Both links have pre-filled custom messages ready for you!</p>
+    
+    <div class="contact-btn-wrapper">
+        <a class="dual-btn wa" href="https://wa.me/923476712269?text=Hi%20Zubair,%20main%20aapki%20website%20se%20aya%20hoon%20aur%20mujhe%20aapke%20POS%20Software/Tools%20ke%20baare%20mein%20details%20chahiyen." target="_blank">
+            💬 Chat via WhatsApp
+        </a>
+        
+        <a class="dual-btn mail" href="mailto:freefire445879@gmail.com?subject=Inquiry%20Regarding%20MZ%20Professional%20POS%20Software&body=Hi%20Zubair,%0A%0AI%20visited%20your%20portfolio%20website%20and%20I%20am%20interested%20in%20your%20POS%20Software%20solutions.%20Please%20provide%20more%20information%20regarding%20the%20pricing%20plans%20and%20setup%20process.%0A%0AThanks!">
+            ✉️ Send an Email
+        </a>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 # ---------------- FAQs SECTION ---------------- #
 import streamlit as st
 
