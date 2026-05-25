@@ -979,6 +979,12 @@ Chat on WhatsApp
 </a>
 </div>
 """, unsafe_allow_html=True)
+st.markdown("""
+<div style="text-align: center; padding: 40px 0 20px 0; color: #64748b; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px;">
+    © 2026 MZ Professional Tools. All Rights Reserved. <br>
+    <span style="color: #00cfff;">Developed with ❤️ by Muhammad Zubair (Daska)</span>
+</div>
+""", unsafe_allow_html=True)
 
 # Close Main Container
 st.markdown("</div>", unsafe_allow_html=True)
