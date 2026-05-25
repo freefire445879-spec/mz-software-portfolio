@@ -815,20 +815,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# --- 3. FAQs SECTION ---
 
-
-# --- 4. REVIEW SECTION ---
-
-
-# --- 5. CONTACT SECTION ---
-st.markdown("""
-<div class="contact-box">
-    <h3>Get In Touch</h3>
-    <p>📞 03476712269</p>
-    <a class="call-btn" href="https://wa.me/923476712269" target="_blank">Chat on WhatsApp</a>
-</div>
-""", unsafe_allow_html=True)
 # ---------------- FAQs SECTION ---------------- #
 import streamlit as st
 
