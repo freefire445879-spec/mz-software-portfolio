@@ -816,30 +816,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 3. FAQs SECTION ---
-st.markdown("### ❓ Frequently Asked Questions")
-faq_data = {
-    "1. Can I test the software before buying?": "Yes, we provide a Free Demo version.",
-    "2. Is this a lifetime license?": "Yes, it is a one-time payment for lifetime access.",
-    "3. Is technical support included?": "Absolutely! We provide 24/7 support."
-}
 
-if 'active_faq' not in st.session_state: st.session_state.active_faq = None
-
-for i, (q, a) in enumerate(faq_data.items()):
-    if st.button(q, key=f"faq_{i}"):
-        st.session_state.active_faq = i if st.session_state.active_faq != i else None
-    if st.session_state.active_faq == i:
-        st.markdown(f'<div class="answer-box">{a}</div>', unsafe_allow_html=True)
 
 # --- 4. REVIEW SECTION ---
-st.markdown("### 📝 Leave a Review")
-with st.form("review_form", clear_on_submit=True):
-    col1, col2 = st.columns(2)
-    with col1: name = st.text_input("Your Name")
-    with col2: email = st.text_input("Email Address")
-    comment = st.text_area("Your Comment")
-    if st.form_submit_button("Submit"):
-        st.success("Feedback received!")
+
 
 # --- 5. CONTACT SECTION ---
 st.markdown("""
