@@ -739,12 +739,18 @@ st.markdown("""
 import streamlit as st
 
 # Pricing Section Header
-st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
+import streamlit as st
+import requests
 
-# Custom CSS & HTML for Pricing Cards
+# --- 1. SETTINGS & CSS (ONLY ONE TIME) ---
+st.set_page_config(layout="wide", page_title="MZ Professional Tools")
+
 st.markdown("""
 <style>
-    /* Container styling for perfect alignment */
+    /* Global Styles */
+    body { color: #f8fafc; }
+    
+    /* Pricing Container */
     .pricing-container {
         display: flex;
         flex-wrap: wrap;
@@ -752,8 +758,6 @@ st.markdown("""
         gap: 25px;
         margin-top: 30px;
     }
-    
-    /* Individual Card Styling */
     .pricing-card {
         background-color: #1e293b;
         border: 1px solid #334155;
@@ -761,156 +765,88 @@ st.markdown("""
         padding: 30px 20px;
         width: 260px;
         text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Keeps button at bottom */
-        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease;
     }
+    .pricing-card:hover { transform: translateY(-10px); border-color: #00cfff; }
+    .pricing-title { font-size: 20px; font-weight: bold; color: #f8fafc; }
+    .pricing-price { font-size: 28px; font-weight: 800; color: #00cfff; margin: 15px 0; }
+    .wa-btn { display: block; margin-top: 15px; padding: 10px; background: #00cfff; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    .wa-btn:hover { background: #fff; }
+
+    /* FAQ CSS */
+    div.stButton > button { width: 100%; background-color: #1e293b !important; color: white !important; border: 1px solid #334155 !important; padding: 20px !important; text-align: left !important; }
+    .answer-box { background: #0f172a; padding: 20px; border-left: 5px solid #00cfff; }
+
+    /* Review Form CSS */
+    label { color: #ffffff !important; }
+    div[data-baseweb="input"] > div { background-color: #1e293b !important; }
     
-    /* Hover effect */
-    .pricing-card:hover {
-        transform: translateY(-10px);
-        border-color: #00cfff;
-        box-shadow: 0 10px 25px rgba(0, 207, 255, 0.15);
-    }
-    
-    /* Premium Card Glow */
-    .pricing-card.premium {
-        background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-        border: 2px solid #00cfff;
-        box-shadow: 0 0 15px rgba(0, 207, 255, 0.2);
-    }
-
-    /* Badges */
-    .badge {
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: bold;
-        color: white;
-        letter-spacing: 1px;
-    }
-    .badge.orange { background-color: #f59e0b; }
-    .badge.green { background-color: #10b981; }
-    .badge.red { background: linear-gradient(135deg, #ff512f, #dd2476); }
-
-    /* Text Formatting */
-    .pricing-title {
-        font-size: 22px;
-        font-weight: bold;
-        color: #f8fafc;
-        margin-top: 15px;
-    }
-    .pricing-price {
-        font-size: 32px;
-        font-weight: 800;
-        color: #00cfff;
-        margin: 15px 0;
-    }
-    .pricing-duration {
-        font-size: 14px;
-        font-weight: normal;
-        color: #94a3b8;
-    }
-
-    /* Custom WhatsApp Button */
-    .wa-btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 0;
-        width: 100%;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 16px;
-        color: #ffffff;
-        background-color: #334155;
-        transition: all 0.3s ease;
-    }
-    .wa-btn:hover {
-        background-color: #00cfff;
-        color: #0f172a;
-        transform: scale(1.05);
-    }
-
-    /* Premium WhatsApp Button */
-    .premium .wa-btn {
-        background: linear-gradient(135deg, #00cfff, #007bff);
-        color: white;
-    }
-    .premium .wa-btn:hover {
-        box-shadow: 0 5px 15px rgba(0, 207, 255, 0.4);
-        transform: scale(1.05);
-    }
+    /* Contact CSS */
+    .contact-box { background: #1e293b; padding: 30px; border-radius: 15px; text-align: center; }
+    .call-btn { padding: 15px 30px; background: #25d366; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; }
 </style>
+""", unsafe_allow_html=True)
 
+# --- 2. PRICING SECTION ---
+st.markdown('<h2 style="text-align: center;">Our Sales Plan</h2>', unsafe_allow_html=True)
+
+st.markdown("""
 <div class="pricing-container">
-
     <div class="pricing-card">
-        <div>
-            <div class="pricing-title">Free Trial</div>
-            <div class="pricing-price">Rs 0</div>
-            <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 14px;">Test out the core features of our POS system before buying.</p>
-            <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                <li>⚠️ Limited Bills & Points</li>
-                <li>❌ No Custom Logo</li>
-                <li>❌ No Online Backup & Restore</li>
-            </ul>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Free%20Trial" target="_blank" class="wa-btn">Get Free Trial</a>
+        <div class="pricing-title">Free Trial</div>
+        <div class="pricing-price">Rs 0</div>
+        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Free%20Trial" class="wa-btn">Buy Now</a>
     </div>
-
     <div class="pricing-card">
-        <div class="badge orange">GOOD VALUE</div>
-        <div>
-            <div class="pricing-title">Yearly License</div>
-            <div class="pricing-price">Rs 2,000<span class="pricing-duration"> / year</span></div>
-            <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 14px;">Perfect for businesses wanting to test out our premium features at a low cost.</p>
-            <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                <li>✔️ Full POS Functionality</li>
-                <li>✔️ Standard Updates</li>
-                <li>✔️ Email Support</li>
-            </ul>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Yearly%20License" target="_blank" class="wa-btn">Buy Yearly Plan</a>
+        <div class="pricing-title">Yearly License</div>
+        <div class="pricing-price">Rs 2,000</div>
+        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Yearly%20License" class="wa-btn">Buy Now</a>
     </div>
-
     <div class="pricing-card">
-        <div class="badge green">BETTER VALUE</div>
-        <div>
-            <div class="pricing-title">2-Year License</div>
-            <div class="pricing-price">Rs 3,500<span class="pricing-duration"> / 2 years</span></div>
-            <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 14px;">Save more with a multi-year plan for uninterrupted business operations.</p>
-            <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                <li>✔️ Full POS Functionality</li>
-                <li>✔️ Discounted Pricing</li>
-                <li>✔️ Priority Support</li>
-            </ul>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%202-Year%20License" target="_blank" class="wa-btn">Buy 2-Year Plan</a>
+        <div class="pricing-title">2-Year License</div>
+        <div class="pricing-price">Rs 3,500</div>
+        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%202-Year%20License" class="wa-btn">Buy Now</a>
     </div>
-
-    <div class="pricing-card premium">
-        <div class="badge red">BEST VALUE</div>
-        <div>
-            <div class="pricing-title">Lifetime Access</div>
-            <div class="pricing-price">Rs 20,000<span class="pricing-duration"> / once</span></div>
-            <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 14px;">Continuous access forever with zero renewal fees. Buy it once, own it for life.</p>
-            <ul style="text-align: left; color: #94a3b8; list-style: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                <li>✔️ Lifetime POS Access</li>
-                <li>✔️ Cloud Backup & Restore</li>
-                <li>✔️ Priority WhatsApp Support</li>
-                <li>✔️ Free Future Updates</li>
-            </ul>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Lifetime%20Access" target="_blank" class="wa-btn">Buy Lifetime Access</a>
+    <div class="pricing-card">
+        <div class="pricing-title">Lifetime Access</div>
+        <div class="pricing-price">Rs 20,000</div>
+        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Lifetime%20Access" class="wa-btn">Buy Now</a>
     </div>
+</div>
+""", unsafe_allow_html=True)
 
+# --- 3. FAQs SECTION ---
+st.markdown("### ❓ Frequently Asked Questions")
+faq_data = {
+    "1. Can I test the software before buying?": "Yes, we provide a Free Demo version.",
+    "2. Is this a lifetime license?": "Yes, it is a one-time payment for lifetime access.",
+    "3. Is technical support included?": "Absolutely! We provide 24/7 support."
+}
+
+if 'active_faq' not in st.session_state: st.session_state.active_faq = None
+
+for i, (q, a) in enumerate(faq_data.items()):
+    if st.button(q, key=f"faq_{i}"):
+        st.session_state.active_faq = i if st.session_state.active_faq != i else None
+    if st.session_state.active_faq == i:
+        st.markdown(f'<div class="answer-box">{a}</div>', unsafe_allow_html=True)
+
+# --- 4. REVIEW SECTION ---
+st.markdown("### 📝 Leave a Review")
+with st.form("review_form", clear_on_submit=True):
+    col1, col2 = st.columns(2)
+    with col1: name = st.text_input("Your Name")
+    with col2: email = st.text_input("Email Address")
+    comment = st.text_area("Your Comment")
+    if st.form_submit_button("Submit"):
+        st.success("Feedback received!")
+
+# --- 5. CONTACT SECTION ---
+st.markdown("""
+<div class="contact-box">
+    <h3>Get In Touch</h3>
+    <p>📞 03476712269</p>
+    <a class="call-btn" href="https://wa.me/923476712269" target="_blank">Chat on WhatsApp</a>
 </div>
 """, unsafe_allow_html=True)
 # ---------------- FAQs SECTION ---------------- #
