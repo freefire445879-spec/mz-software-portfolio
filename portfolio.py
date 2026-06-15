@@ -759,7 +759,6 @@ st.markdown("""
                 <li>Optimized High-Speed Workflows</li>
                 <li>Advanced Key Performance Tools</li>
                 <li>Priority Local/Cloud Backup</li>
-                <li>24/7 Priority Support Access</li>
             </ul>
         </div>
         <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20a%202-Year%20License" class="wa-btn">Go Pro</a>
@@ -776,7 +775,6 @@ st.markdown("""
                 <li>100% Custom Changes Supported</li>
                 <li>Tailored Workflows To Your Rules</li>
                 <li>Lifetime Free Upgrades</li>
-                <li>No Monthly or Annual Fees</li>
             </ul>
         </div>
         <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Lifetime%20Access" class="wa-btn">Get Lifetime</a>
