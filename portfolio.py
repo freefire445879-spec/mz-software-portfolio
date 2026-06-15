@@ -872,7 +872,7 @@ st.markdown("""
 <div class="pricing-card" style="border-color: #00cfff;">
 <div>
 <div class="pricing-title">1-Year Premium</div>
-<div class="pricing-price">25 USD <span class="pricing-subprice">Rs 700,000</span></div>
+<div class="pricing-price">25 USD <span class="pricing-subprice">Rs 7,000</span></div>
 <details>
 <summary>View Features</summary>
 <ul>
@@ -905,7 +905,7 @@ st.markdown("""
 <div class="pricing-card" style="border-color: #ff5c5c; background: rgba(255, 92, 92, 0.02);">
 <div>
 <div class="pricing-title" style="color: #ff5c5c;">Lifetime Access</div>
-<div class="pricing-price" style="color: #ff5c5c;">400 USD <span class="pricing-subprice">Rs 112,000</span></div>
+<div class="pricing-price" style="color: #ff5c5c;">90 USD <span class="pricing-subprice">Rs 25,000</span></div>
 <details>
 <summary style="background: rgba(255, 92, 92, 0.15); color: #ff5c5c; border-color: rgba(255, 92, 92, 0.3);">View Features</summary>
 <ul>
@@ -916,7 +916,7 @@ st.markdown("""
 </ul>
 </details>
 </div>
-<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%20Lifetime%20Access%20License%20(400%20USD)" class="wa-btn" style="background: linear-gradient(135deg, #ff512f, #dd2476); color: #ffffff !important;">Buy Now</a>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%20Lifetime%20Access%20License%20(90%20USD)" class="wa-btn" style="background: linear-gradient(135deg, #ff512f, #dd2476); color: #ffffff !important;">Buy Now</a>
 </div>
 </div>
 """, unsafe_allow_html=True)
