@@ -872,7 +872,7 @@ st.markdown("""
 <div class="pricing-card" style="border-color: #00cfff;">
 <div>
 <div class="pricing-title">1-Year Premium</div>
-<div class="pricing-price">75 USD <span class="pricing-subprice">Rs 21,000</span></div>
+<div class="pricing-price">25 USD <span class="pricing-subprice">Rs 700,000</span></div>
 <details>
 <summary>View Features</summary>
 <ul>
@@ -884,7 +884,7 @@ st.markdown("""
 </ul>
 </details>
 </div>
-<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%201-Year%20Premium%20License%20(75%20USD)" class="wa-btn">Buy Now</a>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%201-Year%20Premium%20License%20(25%20USD)" class="wa-btn">Buy Now</a>
 </div>
 <div class="pricing-card">
 <div>
