@@ -788,7 +788,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 2. PRICING SECTION ---
-st.markdown('<h2 style="text-align: center;">Our Sales Plan</h2>', unsafe_allow_html=True)
+st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="pricing-container">
