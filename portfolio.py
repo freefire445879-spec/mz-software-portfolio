@@ -788,7 +788,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 2. PRICING SECTION ---
-# --- 2. PRICING SECTION ---
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
 # Add minor CSS adjustments locally to keep cards flexible and buttons perfectly at the bottom
@@ -855,7 +854,6 @@ st.markdown("""
 
 st.markdown("""
 <div class="pricing-container">
-    <!-- Card 1: Free Trial -->
     <div class="pricing-card">
         <div>
             <div class="pricing-title">Free Trial</div>
@@ -873,7 +871,6 @@ st.markdown("""
         <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Free%207-Day%20Trial" class="wa-btn">Get Started</a>
     </div>
 
-    <!-- Card 2: 1-Year Premium -->
     <div class="pricing-card" style="border-color: #00cfff;">
         <div>
             <div class="pricing-title">1-Year Premium</div>
@@ -892,7 +889,6 @@ st.markdown("""
         <a href="https://wa.me/923476712269?text=I%20want%20to%20buy%201-Year%20Premium%20License%20(75%20USD)" class="wa-btn">Buy Now</a>
     </div>
 
-    <!-- Card 3: 2-Year Custom -->
     <div class="pricing-card">
         <div>
             <div class="pricing-title">2-Year Custom</div>
@@ -910,7 +906,6 @@ st.markdown("""
         <a href="https://wa.me/923476712269?text=I%20want%20to%20buy%202-Year%20Custom%20License%20(130%20USD)" class="wa-btn">Buy Now</a>
     </div>
 
-    <!-- Card 4: Lifetime Access -->
     <div class="pricing-card" style="border-color: #ff5c5c; background: rgba(255, 92, 92, 0.02);">
         <div>
             <div class="pricing-title" style="color: #ff5c5c;">Lifetime Access</div>
@@ -929,6 +924,37 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+
+# ---------------- CONTACT SECTION ---------------- #
+st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="contact-box">
+    <div style="font-size: 2.6rem; font-weight: 800; color: #ff5c5c; margin-bottom: 20px;">Get In Touch</div>
+    <div style="font-size: 1.6rem; color: #ffffff; margin: 15px 0 20px; font-weight: 700;">
+        📞 03476712269
+    </div>
+    <div style="font-size: 1.3rem; margin-bottom: 35px; font-weight: 600; color: #cbd5e1;">
+        📍 Pull Nehar, Daska
+    </div>
+    <a class="call-btn" href="https://wa.me/923476712269" target="_blank">
+        Chat on WhatsApp
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
+# ---------------- FOOTER SECTION ---------------- #
+st.markdown("""
+<div style="text-align: center; padding: 40px 0 20px 0; color: #64748b; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px;">
+    © 2026 MZ Professional Tools. All Rights Reserved. <br>
+    <span style="color: #00cfff;">Developed with ❤️ by Muhammad Zubair (Daska)</span>
+</div>
+""", unsafe_allow_html=True)
+
+# Close Main Container Safely at the Very End
+st.markdown("</div>", unsafe_allow_html=True)
+
 
 # ---------------- FAQs SECTION ---------------- #
 import streamlit as st
