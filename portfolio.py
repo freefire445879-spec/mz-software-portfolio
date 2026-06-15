@@ -790,138 +790,134 @@ st.markdown("""
 # --- 2. PRICING SECTION ---
 st.markdown('<div id="pricing" class="section-title section-anchor">Our Sales Plan</div>', unsafe_allow_html=True)
 
-# Add minor CSS adjustments locally to keep cards flexible and buttons perfectly at the bottom
 st.markdown("""
 <style>
-    .pricing-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        margin-top: 30px;
-    }
-    .pricing-card {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 15px;
-        padding: 35px 20px;
-        width: 280px;
-        text-align: center;
-        transition: transform 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 400px;
-    }
-    .pricing-card:hover { 
-        transform: translateY(-10px); 
-        border-color: #00cfff; 
-    }
-    .pricing-title { 
-        font-size: 22px; 
-        font-weight: bold; 
-        color: #ffffff; 
-    }
-    .pricing-price { 
-        font-size: 26px; 
-        font-weight: 800; 
-        color: #00cfff; 
-        margin: 15px 0; 
-    }
-    .pricing-subprice {
-        font-size: 16px;
-        color: #94a3b8;
-        font-weight: normal;
-        display: block;
-        margin-top: 5px;
-    }
-    .wa-btn { 
-        display: block; 
-        margin-top: auto; 
-        padding: 12px; 
-        background: #00cfff; 
-        color: #000000 !important; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        font-weight: bold; 
-        transition: background 0.3s;
-    }
-    .wa-btn:hover { 
-        background: #ffffff; 
-    }
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+.pricing-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 35px 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+}
+.pricing-card:hover { 
+    transform: translateY(-10px); 
+    border-color: #00cfff; 
+}
+.pricing-title { 
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #ffffff; 
+}
+.pricing-price { 
+    font-size: 26px; 
+    font-weight: 800; 
+    color: #00cfff; 
+    margin: 15px 0; 
+}
+.pricing-subprice {
+    font-size: 16px;
+    color: #94a3b8;
+    font-weight: normal;
+    display: block;
+    margin-top: 5px;
+}
+.wa-btn { 
+    display: block; 
+    margin-top: auto; 
+    padding: 12px; 
+    background: #00cfff; 
+    color: #000000 !important; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    transition: background 0.3s;
+}
+.wa-btn:hover { 
+    background: #ffffff; 
+}
 </style>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="pricing-container">
-    <div class="pricing-card">
-        <div>
-            <div class="pricing-title">Free Trial</div>
-            <div class="pricing-price">0 USD <span class="pricing-subprice">Rs 0</span></div>
-            <details>
-                <summary>View Features</summary>
-                <ul>
-                    <li>Valid only for 7 Days</li>
-                    <li>No Custom Solutions</li>
-                    <li>No 24/7 Technical Help</li>
-                    <li>Standard System Core Features</li>
-                </ul>
-            </details>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Free%207-Day%20Trial" class="wa-btn">Get Started</a>
-    </div>
-
-    <div class="pricing-card" style="border-color: #00cfff;">
-        <div>
-            <div class="pricing-title">1-Year Premium</div>
-            <div class="pricing-price">75 USD <span class="pricing-subprice">Rs 21,000</span></div>
-            <details>
-                <summary>View Features</summary>
-                <ul>
-                    <li>Premium Modern Design Layout</li>
-                    <li>Advanced Enterprise Look</li>
-                    <li>24/7 Priority Support Help</li>
-                    <li>Minor Custom Solution Tweaks</li>
-                    <li>License Expiry after 365 Days</li>
-                </ul>
-            </details>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20buy%201-Year%20Premium%20License%20(75%20USD)" class="wa-btn">Buy Now</a>
-    </div>
-
-    <div class="pricing-card">
-        <div>
-            <div class="pricing-title">2-Year Custom</div>
-            <div class="pricing-price">130 USD <span class="pricing-subprice">Rs 36,400</span></div>
-            <details>
-                <summary>View Features</summary>
-                <ul>
-                    <li>2-Year Custom Solutions for All Modules</li>
-                    <li>24/7 Hours Live Chat to Developer</li>
-                    <li>Advanced Features & Workflow Integration</li>
-                    <li>License Expiry after 2 Years</li>
-                </ul>
-            </details>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20buy%202-Year%20Custom%20License%20(130%20USD)" class="wa-btn">Buy Now</a>
-    </div>
-
-    <div class="pricing-card" style="border-color: #ff5c5c; background: rgba(255, 92, 92, 0.02);">
-        <div>
-            <div class="pricing-title" style="color: #ff5c5c;">Lifetime Access</div>
-            <div class="pricing-price" style="color: #ff5c5c;">400 USD <span class="pricing-subprice">Rs 112,000</span></div>
-            <details>
-                <summary style="background: rgba(255, 92, 92, 0.15); color: #ff5c5c; border-color: rgba(255, 92, 92, 0.3);">View Features</summary>
-                <ul>
-                    <li>All Premium Features Unlocked</li>
-                    <li>Complete Custom Solutions Tailored Specially</li>
-                    <li>24/7 Priority Support (Never Expires)</li>
-                    <li>Direct Live Chat with Developer to Face Any Issues</li>
-                </ul>
-            </details>
-        </div>
-        <a href="https://wa.me/923476712269?text=I%20want%20to%20buy%20Lifetime%20Access%20License%20(400%20USD)" class="wa-btn" style="background: linear-gradient(135deg, #ff512f, #dd2476); color: #ffffff !important;">Buy Now</a>
-    </div>
+<div class="pricing-card">
+<div>
+<div class="pricing-title">Free Trial</div>
+<div class="pricing-price">0 USD <span class="pricing-subprice">Rs 0</span></div>
+<details>
+<summary>View Features</summary>
+<ul>
+<li>Valid only for 7 Days</li>
+<li>No Custom Solutions</li>
+<li>No 24/7 Technical Help</li>
+<li>Standard System Core Features</li>
+</ul>
+</details>
+</div>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20get%20Free%207-Day%20Trial" class="wa-btn">Get Started</a>
+</div>
+<div class="pricing-card" style="border-color: #00cfff;">
+<div>
+<div class="pricing-title">1-Year Premium</div>
+<div class="pricing-price">75 USD <span class="pricing-subprice">Rs 21,000</span></div>
+<details>
+<summary>View Features</summary>
+<ul>
+<li>Premium Modern Design Layout</li>
+<li>Advanced Enterprise Look</li>
+<li>24/7 Priority Support Help</li>
+<li>Minor Custom Solution Tweaks</li>
+<li>License Expiry after 365 Days</li>
+</ul>
+</details>
+</div>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%201-Year%20Premium%20License%20(75%20USD)" class="wa-btn">Buy Now</a>
+</div>
+<div class="pricing-card">
+<div>
+<div class="pricing-title">2-Year Custom</div>
+<div class="pricing-price">130 USD <span class="pricing-subprice">Rs 36,400</span></div>
+<details>
+<summary>View Features</summary>
+<ul>
+<li>2-Year Custom Solutions for All Modules</li>
+<li>24/7 Hours Live Chat to Developer</li>
+<li>Advanced Features & Workflow Integration</li>
+<li>License Expiry after 2 Years</li>
+</ul>
+</details>
+</div>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%202-Year%20Custom%20License%20(130%20USD)" class="wa-btn">Buy Now</a>
+</div>
+<div class="pricing-card" style="border-color: #ff5c5c; background: rgba(255, 92, 92, 0.02);">
+<div>
+<div class="pricing-title" style="color: #ff5c5c;">Lifetime Access</div>
+<div class="pricing-price" style="color: #ff5c5c;">400 USD <span class="pricing-subprice">Rs 112,000</span></div>
+<details>
+<summary style="background: rgba(255, 92, 92, 0.15); color: #ff5c5c; border-color: rgba(255, 92, 92, 0.3);">View Features</summary>
+<ul>
+<li>All Premium Features Unlocked</li>
+<li>Complete Custom Solutions Tailored Specially</li>
+<li>24/7 Priority Support (Never Expires)</li>
+<li>Direct Live Chat with Developer to Face Any Issues</li>
+</ul>
+</details>
+</div>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%20Lifetime%20Access%20License%20(400%20USD)" class="wa-btn" style="background: linear-gradient(135deg, #ff512f, #dd2476); color: #ffffff !important;">Buy Now</a>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
