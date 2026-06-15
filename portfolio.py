@@ -889,7 +889,7 @@ st.markdown("""
 <div class="pricing-card">
 <div>
 <div class="pricing-title">2-Year Custom</div>
-<div class="pricing-price">130 USD <span class="pricing-subprice">Rs 36,400</span></div>
+<div class="pricing-price">50 USD <span class="pricing-subprice">Rs 16,000</span></div>
 <details>
 <summary>View Features</summary>
 <ul>
@@ -900,7 +900,7 @@ st.markdown("""
 </ul>
 </details>
 </div>
-<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%202-Year%20Custom%20License%20(130%20USD)" class="wa-btn">Buy Now</a>
+<a href="https://wa.me/923476712269?text=I%20want%20to%20buy%202-Year%20Custom%20License%20(50%20USD)" class="wa-btn">Buy Now</a>
 </div>
 <div class="pricing-card" style="border-color: #ff5c5c; background: rgba(255, 92, 92, 0.02);">
 <div>
