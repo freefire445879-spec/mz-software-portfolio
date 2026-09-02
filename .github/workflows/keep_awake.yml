@@ -1,0 +1,16 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    # Runs every 4 hours to keep the app active
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Allows you to run this manually anytime
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a request to Streamlit app
+        run: |
+          curl -sI https://muhammadzubairpospk.streamlit.app/ | head -n 1
+
